@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ResultsViewController.h
 //  JamesSmith
 //
 //  Created by Jamie Smith on 4/11/14.
@@ -8,6 +8,8 @@
 
 @import UIKit;
 
-@interface SearchViewController : UIViewController
+@interface ResultsViewController : UITableViewController
+@property (nonatomic, strong)NSString *searchQuery;
+
 
 @end

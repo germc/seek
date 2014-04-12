@@ -35,7 +35,7 @@ static NSString *const kClientString = @"firefox";
 
 -(void)suggestionsForQuery:(NSString *)query withCompletionHandler:(QueryCompletionHandler)completion{
     
-    NSString *urlString = [NSString stringWithFormat:@"%@?client=%@&q=%@", kGoogleAutoCompleteAPI, kClientString, escapedString(query)];
+    NSString *urlString = [NSString stringWithFormat:@"%@?client=%@&q=%@", kGoogleAutoCompleteAPI, kClientString, escapeString(query)];
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLSessionDataTask *suggestionsTask = [self.session
@@ -50,12 +50,6 @@ static NSString *const kClientString = @"firefox";
     
     [suggestionsTask resume];
     
-}
-
-#pragma mark - Helpers
-
-NSString * escapedString(NSString *string) {
-    return string;
 }
 
 @end

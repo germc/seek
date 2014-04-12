@@ -8,6 +8,7 @@
 
 @import Foundation;
 
+/* Completion Handler is called on the main thread */
 typedef void (^QueryCompletionHandler)(NSArray *results, NSError *error);
 
 @interface AutocompleteAPI : NSObject
