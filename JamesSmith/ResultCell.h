@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *linkLabel;
+@property (strong, nonatomic) UILabel *descriptionLabel;
 
 @end

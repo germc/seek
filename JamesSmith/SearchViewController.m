@@ -24,7 +24,7 @@
 #import "PushBackTransition.h"
 
 
-static NSUInteger const kNumberOfSuggestions = 6;
+static NSUInteger const kNumberOfSuggestions = 8;
 static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 @interface SearchViewController () <UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate>
@@ -50,8 +50,6 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 {
     [super viewDidLoad];
     
-    
-    
     _interactiveTransitionController = [PanInteractiveTransitionController new];
     _pushBackTransition = [PushBackTransition new];
     self.navigationController.delegate = self;
@@ -61,10 +59,17 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
     [self.searchTextField becomeFirstResponder];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.searchTextField.alpha = 0.0;
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self.searchTextField becomeFirstResponder];
+    [UIView animateWithDuration:0.4 animations:^{
+        self.searchTextField.alpha = 1.0;
+    }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -104,7 +109,7 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 #pragma mark - UICollectionView Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    _searchQuery = self.suggestions[_touchedCellIndex];
+    _searchQuery = self.suggestions[indexPath.row];
     [self performSegueWithIdentifier:kSearchToResultsSegueID sender:self];
 }
 

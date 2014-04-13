@@ -11,6 +11,7 @@
 
 // Models
 #import "BingSearchResult.h"
+#import "OvershareKit.h"
 
 // Views
 #import "NJKWebViewProgressView.h"
@@ -20,8 +21,7 @@
 #import "PushBackTransition.h"
 #import "NJKWebViewProgress.h"
 
-
-@interface WebViewController () <UIWebViewDelegate, UINavigationControllerDelegate, NJKWebViewProgressDelegate>
+@interface WebViewController () <UIWebViewDelegate, UINavigationControllerDelegate, NJKWebViewProgressDelegate, OSKPresentationStyle, OSKActivityCustomizations>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -36,13 +36,15 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.forwardButton.enabled = NO;
+    
     self.progressProxy = [NJKWebViewProgress new];
     self.webView.delegate = self.progressProxy;
     self.progressProxy.webViewProxyDelegate = self;
     self.progressProxy.progressDelegate = self;
-    
     self.progressView = [[NJKWebViewProgressView alloc] initWithFrame:CGRectMake(0, 17.5f, self.view.bounds.size.width, 2.5f)];
+    self.progressView.progressBarView.backgroundColor = [UIColor colorWithRed:0.00f green:(122.0/255.0) blue:1.00f alpha:1.00f];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.searchResult.url];
     [self.webView loadRequest:request];
@@ -54,6 +56,11 @@
 }
 
 #pragma mark - IBActions
+- (IBAction)shareButtonPressed:(id)sender {
+    [[OSKActivitiesManager sharedInstance] setCustomizationsDelegate:self];
+    OSKShareableContent *content = [OSKShareableContent contentFromURL:self.searchResult.url];
+    [[OSKPresentationManager sharedInstance] presentActivitySheetForContent:content presentingViewController:self options:nil];
+}
 
 - (IBAction)backButtonPressed:(__unused id)sender {
     
@@ -76,6 +83,12 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     self.refreshButton.enabled = YES;
+    
+    if ([self.webView canGoForward]) {
+        self.forwardButton.enabled = YES;
+    } else {
+        self.forwardButton.enabled = NO;
+    }
 }
 
 -(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
@@ -84,7 +97,22 @@
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"Error: %@,\nStatus Code:%d", error, error.code);
+    NSLog(@"Error: %@,\nStatus Code:%ld", error, (long)error.code);
     //[self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - OvershareKit Delegates
+
+
+-(UIFontDescriptor *)osk_normalFontDescriptor {
+    UIFontDescriptor *font = [UIFontDescriptor fontDescriptorWithName:@"AvenirNext" size:17.0];
+    
+    return font;
+}
+
+-(UIFontDescriptor *)osk_boldFontDescriptor {
+    UIFontDescriptor *font = [UIFontDescriptor fontDescriptorWithName:@"AvenirNext-Medium" size:17.0];
+    
+    return font;
 }
 @end

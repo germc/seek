@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface ResultsViewController : UITableViewController
+@interface ResultsViewController : UIViewController
 @property (nonatomic, strong)NSString *searchQuery;
 
 

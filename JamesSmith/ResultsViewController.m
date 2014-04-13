@@ -20,10 +20,13 @@
 
 static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
 
-@interface ResultsViewController ()
+@interface ResultsViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)SearchAPI *searchAPI;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray *searchResults;
 @property (nonatomic, strong)UIActivityIndicatorView *spinner;
+
+@property (nonatomic, strong)NSMutableDictionary *offScreenCells;
 @end
 
 @implementation ResultsViewController {
@@ -35,6 +38,7 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
     self = [super initWithCoder:aDecoder];
     
     if (self) {
+        self.offScreenCells = [NSMutableDictionary dictionary];
         self.searchAPI = [SearchAPI new];
         self.searchResults = [NSMutableArray new];
     }
@@ -44,6 +48,7 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerClass:[ResultCell class] forCellReuseIdentifier:NSStringFromClass([ResultCell class])];
     self.spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     self.spinner.center = CGPointMake(self.tableView.center.x, 65);
     self.spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -77,6 +82,7 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     _touchedRowIndex = indexPath.row;
     [self performSegueWithIdentifier:kResultsToWebSegue sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -92,10 +98,47 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
     
     cell.titleLabel.text = searchResult.title;
     cell.linkLabel.text = searchResult.url.description;
-    cell.descriptionTextView.text = searchResult.descriptionText;
+    cell.descriptionLabel.text = searchResult.descriptionText;
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
     
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *reuseID = NSStringFromClass([ResultCell class]);
+    
+    ResultCell *cell = self.offScreenCells[reuseID];
+    
+    if (!cell) {
+        cell = [ResultCell new];
+        self.offScreenCells[reuseID] = cell;
+    }
+    
+    BingSearchResult *searchResult = self.searchResults[indexPath.row];
+    cell.titleLabel.text = searchResult.title;
+    cell.descriptionLabel.text = searchResult.descriptionText;
+    cell.linkLabel.text = searchResult.url.description;
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    cell.bounds = CGRectMake(0, 0, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    
+    // Padding for separators
+    height += 1;
+    
+    return height;
+}
 
 @end
