@@ -15,4 +15,6 @@ typedef void (^SearchCompletionHandler)(NSArray *results, NSError *error);
 
 -(void)searchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion;
 
+-(void)imageSearchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion;
+
 @end

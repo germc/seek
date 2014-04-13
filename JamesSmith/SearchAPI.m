@@ -15,9 +15,9 @@
 //Categories
 #import "NSData+Base64.h"
 
-static NSString *const kBingAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
+static NSString *const kBingWebAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
+static NSString *const kBingImageAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
 
-//static NSString *const kBingAPIURL = @"https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Image";
 static NSString *const kBingAccountKey = @"akhwO6KR36BNXHQfN3mkvm54ZilO06GhnjiyXiGb1L8";
 static NSString *const kBingMarketString = @"en-us";
 
@@ -42,6 +42,8 @@ NSString * buildAuthorizationHeader();
     }
     return self;
 }
+
+#pragma mark - Public API
 
 -(void)searchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion{
     NSString *urlString = searchURLWithQuery(query);
@@ -70,18 +72,56 @@ NSString * buildAuthorizationHeader();
     [searchTask resume];
 }
 
+-(void)imageSearchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion {
+    NSString *urlString = imageSearchURLWithQuery(query);
+    NSURLSessionDataTask *searchTask = [self.session dataTaskWithURL:[NSURL URLWithString:urlString]
+                                                   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                       
+                                                       if (error) {
+                                                           completion(nil, error);
+                                                       }
+                                                       else {
+                                                           NSError *jsonError;
+                                                           NSDictionary *jsonDictionaryResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers error:&jsonError];
+                                                           NSArray *resultsArray = jsonDictionaryResults[@"d"][@"results"];
+                                                           
+                                                           // Make BingImageSearchResults
+                                                           
+                                                           // Call completion
+                                                       }
+                                                   }];
+    
+    [searchTask resume];
+}
+
+#pragma mark Private Methods
+
 NSString * searchURLWithQuery(NSString *query) {
     NSString *format = @"JSON";
     NSInteger top = 10;
     
     NSMutableString *urlString = [NSMutableString new];
-    [urlString appendString:kBingAPIURL];
+    [urlString appendString:kBingWebAPIURL];
     [urlString appendFormat:@"Web?$format=%@", format];
     [urlString appendFormat:@"&Query='%@'", escapeString(query)];
     [urlString appendFormat:@"&Market='%@'", escapeString(kBingMarketString)];
     [urlString appendFormat:@"&$top=%d", top];
     
     return [urlString copy];
+}
+
+NSString * imageSearchURLWithQuery(NSString *query) {
+    NSString *format = @"JSON";
+    NSInteger top = 20;
+    
+    NSMutableString *urlString = [NSMutableString new];
+    [urlString appendString:kBingImageAPIURL];
+    [urlString appendFormat:@"Image?$format=%@", format];
+    [urlString appendFormat:@"&Query='%@'", escapeString(query)];
+    [urlString appendFormat:@"&Market='%@'", escapeString(kBingMarketString)];
+    [urlString appendFormat:@"&$top=%d", top];
+    
+    return urlString;
 }
 
 NSString * buildAuthorizationHeader() {

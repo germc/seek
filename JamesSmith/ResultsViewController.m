@@ -26,6 +26,7 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
 @property (nonatomic, strong)NSMutableArray *searchResults;
 @property (nonatomic, strong)UIActivityIndicatorView *spinner;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *displayToggleButton;
 @property (nonatomic, strong)NSMutableDictionary *offScreenCells;
 @end
 
@@ -60,6 +61,15 @@ static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     WebViewController *web = segue.destinationViewController;
     web.searchResult = self.searchResults[_touchedRowIndex];
+}
+
+#pragma mark - IBActions
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)displayToggleButtonPressed:(id)sender {
+    // Show photos
 }
 
 #pragma mark - Helpers
