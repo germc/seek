@@ -2,14 +2,12 @@
 //  ResultsViewController.h
 //  JamesSmith
 //
-//  Created by Jamie Smith on 4/11/14.
+//  Created by admin on 4/13/14.
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface ResultsViewController : UIViewController
 @property (nonatomic, strong)NSString *searchQuery;
-
-
 @end
