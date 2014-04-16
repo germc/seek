@@ -16,7 +16,8 @@
 -(void)attachToViewController:(UIViewController *)viewController {
     _navigationController = viewController.navigationController;
     
-    UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)];
+    UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(panned:)];
     pan.edges = UIRectEdgeLeft;
     [viewController.view addGestureRecognizer:pan];
 }

@@ -10,7 +10,7 @@
 
 @interface PanInteractiveTransitionController : UIPercentDrivenInteractiveTransition
 
-@property(nonatomic, assign)BOOL interactionInProgress;
+@property(nonatomic, assign) BOOL interactionInProgress;
 
 -(void)attachToViewController:(UIViewController *)viewController;
 

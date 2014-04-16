@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface ResultCell : UITableViewCell
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *linkLabel;
 @property (strong, nonatomic) UILabel *descriptionLabel;
-
 @end

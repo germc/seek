@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#include <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSData (Base64)
 - (NSString *)base64Encoding;

@@ -7,9 +7,8 @@
 //
 
 @import UIKit;
-
 @class BingSearchResult;
 
 @interface WebViewController : UIViewController
-@property(nonatomic, strong)BingSearchResult *searchResult;
+@property(nonatomic, strong) BingSearchResult *searchResult;
 @end

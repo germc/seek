@@ -6,20 +6,21 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
+// Controllers
 #import "ResultsViewController.h"
 #import "ResultsContainerViewController.h"
+
 @interface ResultsViewController ()
-@property (nonatomic, weak)ResultsContainerViewController *resultsContainerViewController;
+@property (nonatomic, weak) ResultsContainerViewController *resultsContainerViewController;
 @end
 
 @implementation ResultsViewController
 
-
-
+#pragma mark - Lifecycle
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Embed Segue... Send search query along
     self.resultsContainerViewController = segue.destinationViewController;
-    [segue.destinationViewController setValue:self.searchQuery forKey:@"searchQuery"];
+    self.resultsContainerViewController.searchQuery = self.searchQuery;
 }
 
 #pragma mark - IBActions

@@ -15,14 +15,13 @@
 //Categories
 #import "NSData+Base64.h"
 
-static NSString *const kBingWebAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
-static NSString *const kBingImageAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
-
-static NSString *const kBingAccountKey = @"akhwO6KR36BNXHQfN3mkvm54ZilO06GhnjiyXiGb1L8";
-static NSString *const kBingMarketString = @"en-us";
+static NSString * const kBingWebAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
+static NSString * const kBingImageAPIURL = @"https://api.datamarket.azure.com/Bing/Search/";
+static NSString * const kBingAccountKey = @"akhwO6KR36BNXHQfN3mkvm54ZilO06GhnjiyXiGb1L8";
+static NSString * const kBingMarketString = @"en-us";
 
 @interface SearchAPI () <NSURLSessionDelegate>
-@property (nonatomic, strong)NSURLSession *session;
+@property (nonatomic, strong) NSURLSession *session;
 @end
 
 @implementation SearchAPI
@@ -30,21 +29,22 @@ static NSString *const kBingMarketString = @"en-us";
 NSString * searchURLWithQuery(NSString *query);
 NSString * buildAuthorizationHeader();
 
+#pragma mark - Lifecycle
 -(instancetype)init {
-    self = [super init];
     
-    if (self) {
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        [config setHTTPAdditionalHeaders:@{
-                                           @"Authorization" : buildAuthorizationHeader()
-                                           }];
-        self.session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    if ( !(self = [super init]) ) {
+        return nil;
     }
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    [config setHTTPAdditionalHeaders:@{
+                                       @"Authorization" : buildAuthorizationHeader()
+                                       }];
+    self.session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    
     return self;
 }
 
 #pragma mark - Public API
-
 -(void)searchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion{
     NSString *urlString = searchURLWithQuery(query);
     NSURLSessionDataTask *searchTask = [self.session dataTaskWithURL:[NSURL URLWithString:urlString]
@@ -95,7 +95,6 @@ NSString * buildAuthorizationHeader();
 }
 
 #pragma mark Private Methods
-
 NSString * searchURLWithQuery(NSString *query) {
     NSString *format = @"JSON";
     NSInteger top = 10;

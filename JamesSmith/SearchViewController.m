@@ -19,39 +19,44 @@
 // Categories
 #import "NSArray+reversedArray.h"
 
-// Other
+// Transitions
 #import "PanInteractiveTransitionController.h"
 #import "PushBackTransition.h"
 
 
 static NSUInteger const kNumberOfSuggestions = 8;
-static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
+static NSString * const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
-@interface SearchViewController () <UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate>
-
-@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@interface SearchViewController ()
+<
+UITextFieldDelegate,
+UICollectionViewDelegate,
+UICollectionViewDataSource,
+UINavigationControllerDelegate
+>
+// Models
 @property (nonatomic, strong) AutocompleteAPI *autocompleteAPI;
 @property (nonatomic, strong) NSArray *suggestions;
 
+// Views
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+// Other
+@property (nonatomic, strong) NSString *searchQuery;
+@property (nonatomic, strong) PanInteractiveTransitionController *interactiveTransitionController;
+@property (nonatomic, strong) PushBackTransition *pushBackTransition;
 @end
 
-@implementation SearchViewController {
-    NSInteger _touchedCellIndex;
-    NSString *_searchQuery;
-    PanInteractiveTransitionController *_interactiveTransitionController;
-    PushBackTransition *_pushBackTransition;
-    
-}
-
+@implementation SearchViewController
 
 #pragma mark - Lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _interactiveTransitionController = [PanInteractiveTransitionController new];
-    _pushBackTransition = [PushBackTransition new];
+    self.interactiveTransitionController = [PanInteractiveTransitionController new];
+    self.pushBackTransition = [PushBackTransition new];
     self.navigationController.delegate = self;
     
     self.suggestions = [NSMutableArray new];
@@ -67,14 +72,15 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.searchTextField becomeFirstResponder];
-    [UIView animateWithDuration:0.4 animations:^{
+    
+    [UIView animateWithDuration:0.35 animations:^{
         self.searchTextField.alpha = 1.0;
     }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ResultsViewController *results = segue.destinationViewController;
-    results.searchQuery = _searchQuery;
+    results.searchQuery = self.searchQuery;
 }
 
 #pragma mark - Helpers
@@ -91,17 +97,15 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 #pragma mark - UITextField Delegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-
-    
-    [self.autocompleteAPI suggestionsForQuery:self.searchTextField.text withCompletionHandler:^(NSArray *results, NSError *error) {
-        [self addSuggestions:results];
-    }];
-    
+    [self.autocompleteAPI suggestionsForQuery:self.searchTextField.text
+                        withCompletionHandler:^(NSArray *results, NSError *error) {
+                            [self addSuggestions:results];
+                        }];
     return YES;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    _searchQuery = self.searchTextField.text;
+    self.searchQuery = self.searchTextField.text;
     [self performSegueWithIdentifier:kSearchToResultsSegueID sender:self];
     
     return YES;
@@ -109,7 +113,7 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 #pragma mark - UICollectionView Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    _searchQuery = self.suggestions[indexPath.row];
+    self.searchQuery = self.suggestions[indexPath.row];
     [self performSegueWithIdentifier:kSearchToResultsSegueID sender:self];
 }
 
@@ -124,7 +128,6 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SuggestionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SuggestionCell class]) forIndexPath:indexPath];
-
     NSString *suggestionText = self.suggestions[indexPath.item];
     cell.textLabel.text = suggestionText;
     
@@ -135,13 +138,13 @@ static NSString *const kSearchToResultsSegueID = @"SearchToResultsSegue";
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
     if (operation == UINavigationControllerOperationPush) {
-        [_interactiveTransitionController attachToViewController:toVC];
+        [self.interactiveTransitionController attachToViewController:toVC];
     }
-    return operation == UINavigationControllerOperationPop ? _pushBackTransition : nil;
+    return operation == UINavigationControllerOperationPop ? self.pushBackTransition : nil;
 }
 
 -(id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
-    return _interactiveTransitionController.interactionInProgress ? _interactiveTransitionController : nil;
+    return self.interactiveTransitionController.interactionInProgress ? self.interactiveTransitionController : nil;
 }
 
 

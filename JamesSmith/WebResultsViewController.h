@@ -11,7 +11,6 @@
 @interface WebResultsViewController : UIViewController
 
 // Weak because container has strong ref
-@property (nonatomic, weak)NSString *searchQuery;
-
+@property (nonatomic, weak) NSString *searchQuery;
 
 @end

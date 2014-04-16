@@ -21,11 +21,15 @@
 #import "PushBackTransition.h"
 #import "NJKWebViewProgress.h"
 
-@interface WebViewController () <UIWebViewDelegate, UINavigationControllerDelegate, NJKWebViewProgressDelegate, OSKPresentationStyle, OSKActivityCustomizations>
+@interface WebViewController ()
+<
+UIWebViewDelegate,
+NJKWebViewProgressDelegate
+>
+// Views
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-
 @property(nonatomic, strong) NJKWebViewProgressView *progressView;
 @property(nonatomic, strong) NJKWebViewProgress *progressProxy;
 @end
@@ -33,12 +37,12 @@
 @implementation WebViewController
 
 #pragma mark - Lifecycle
-
 -(void)viewDidLoad {
     [super viewDidLoad];
     
     self.forwardButton.enabled = NO;
     
+// Setup web view
     self.progressProxy = [NJKWebViewProgress new];
     self.webView.delegate = self.progressProxy;
     self.progressProxy.webViewProxyDelegate = self;
@@ -76,7 +80,6 @@
 }
 
 #pragma mark - WebView Delegate
-
 -(void)webViewDidStartLoad:(UIWebView *)webView {
     self.refreshButton.enabled = NO;
 }
@@ -86,7 +89,8 @@
     
     if ([self.webView canGoForward]) {
         self.forwardButton.enabled = YES;
-    } else {
+    }
+    else {
         self.forwardButton.enabled = NO;
     }
 }
@@ -101,18 +105,4 @@
     //[self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - OvershareKit Delegates
-
-
--(UIFontDescriptor *)osk_normalFontDescriptor {
-    UIFontDescriptor *font = [UIFontDescriptor fontDescriptorWithName:@"AvenirNext" size:17.0];
-    
-    return font;
-}
-
--(UIFontDescriptor *)osk_boldFontDescriptor {
-    UIFontDescriptor *font = [UIFontDescriptor fontDescriptorWithName:@"AvenirNext-Medium" size:17.0];
-    
-    return font;
-}
 @end

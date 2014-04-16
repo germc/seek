@@ -9,10 +9,10 @@
 #import "BingSearchResult.h"
 
 @interface BingSearchResult ()
-@property (nonatomic, strong, readwrite)NSString *title;
-@property (nonatomic, strong, readwrite)NSURL *url;
-@property (nonatomic, strong, readwrite)NSString *descriptionText;
-@property (nonatomic, assign, readwrite)int64_t uid;
+@property (nonatomic, strong, readwrite) NSString *title;
+@property (nonatomic, strong, readwrite) NSURL *url;
+@property (nonatomic, strong, readwrite) NSString *descriptionText;
+@property (nonatomic, assign, readwrite) int64_t uid;
 @end
 
 @implementation BingSearchResult

@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface BingSearchResult : NSObject
 
-@property (nonatomic, strong, readonly)NSString *title;
-@property (nonatomic, strong, readonly)NSURL *url;
-@property (nonatomic, strong, readonly)NSString *descriptionText;
-@property (nonatomic, assign, readonly)int64_t uid;
+@property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, strong, readonly) NSURL *url;
+@property (nonatomic, strong, readonly) NSString *descriptionText;
+@property (nonatomic, assign, readonly) int64_t uid;
 
-+ (instancetype)resultWithDictionary:(NSDictionary *)dictionary;
++(instancetype)resultWithDictionary:(NSDictionary *)dictionary;
 
 @end

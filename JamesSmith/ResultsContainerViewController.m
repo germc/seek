@@ -8,23 +8,26 @@
 
 #import "ResultsContainerViewController.h"
 
-static NSString *const kEmbedWebResults = @"EmbedWebResults";
-static NSString *const kEmbedImageResults = @"EmbedImageResults";
+static NSString * const kEmbedWebResults = @"EmbedWebResults";
+static NSString * const kEmbedImageResults = @"EmbedImageResults";
 
 @interface ResultsContainerViewController ()
-@property (nonatomic, strong)NSString *currentSegueIdentifier;
+@property (nonatomic, strong) NSString *currentSegueIdentifier;
 @end
 
 @implementation ResultsContainerViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+// Web Results are shown first by default
     self.currentSegueIdentifier = kEmbedWebResults;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+// Pass along the search query
     [segue.destinationViewController setValue:self.searchQuery forKey:@"searchQuery"];
     
     if ([segue.identifier isEqualToString:kEmbedWebResults]) {
@@ -48,9 +51,9 @@ static NSString *const kEmbedImageResults = @"EmbedImageResults";
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController
 {
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
+    
     [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.4 options:UIViewAnimationOptionTransitionFlipFromLeft animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];

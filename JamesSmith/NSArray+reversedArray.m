@@ -11,7 +11,6 @@
 @implementation NSArray (reversedArray)
 
 -(NSArray *)reversedArray {
-    
     NSMutableArray *array = [NSMutableArray new];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
     

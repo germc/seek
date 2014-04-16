@@ -14,9 +14,7 @@ static const char encodingTable[] =
 
 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-- (NSString *)base64Encoding
-
-{
+- (NSString *)base64Encoding {
     
     if ([self length] == 0) return @"";
     
@@ -31,7 +29,6 @@ static const char encodingTable[] =
     while (i < [self length])
         
     {
-        
         char buffer[3] = {0,0,0};
         
         short bufferLength = 0;
@@ -59,10 +56,8 @@ static const char encodingTable[] =
     }
     
     return [[NSString alloc] initWithBytesNoCopy:characters length:length
-             
-                                         encoding:NSASCIIStringEncoding freeWhenDone:YES];
-    
+            
+                                        encoding:NSASCIIStringEncoding freeWhenDone:YES];
 }
-
 
 @end

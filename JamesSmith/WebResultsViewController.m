@@ -20,26 +20,23 @@
 // Other
 #import "ArrayDataSource.h"
 
-static NSString *const kResultsToWebSegue = @"ResultsToWebSegue";
+static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 
 @interface WebResultsViewController () <UITableViewDelegate>
-
 // Models
 @property (nonatomic, strong) SearchAPI *searchAPI;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) NSMutableDictionary *offScreenCells;
+@property (nonatomic, strong) ArrayDataSource *tableViewDataSource;
 
 // Views
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *displayToggleButton;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
-
 // Other
-@property (nonatomic, strong) ArrayDataSource *tableViewDataSource;
 @property (nonatomic, assign) NSInteger touchedRowIndex;
 @end
-
 
 @implementation WebResultsViewController
 
