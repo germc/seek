@@ -6,19 +6,40 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
+// Controllers
 #import "ResultsContainerViewController.h"
+
+// Models
+#import "SearchAPI.h"
 
 static NSString * const kEmbedWebResults = @"EmbedWebResults";
 static NSString * const kEmbedImageResults = @"EmbedImageResults";
 
 @interface ResultsContainerViewController ()
 @property (nonatomic, strong) NSString *currentSegueIdentifier;
+
+// Models
+@property (nonatomic, strong) NSArray *webSearchResults;
+@property (nonatomic, strong) NSArray *imageSearchResults;
+@property (nonatomic, strong) SearchAPI *searchAPI;
 @end
 
 @implementation ResultsContainerViewController
 
+#pragma mark - Accessors
+-(SearchAPI *)searchAPI {
+    
+    if (!_searchAPI) {
+        _searchAPI = [SearchAPI new];
+    }
+    return _searchAPI;
+}
+
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"Results Container View Did Load");
     
 // Web Results are shown first by default
     self.currentSegueIdentifier = kEmbedWebResults;
@@ -27,8 +48,7 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-// Pass along the search query
-    [segue.destinationViewController setValue:self.searchQuery forKey:@"searchQuery"];
+    [segue.destinationViewController setValue:self forKey:@"delegate"];
     
     if ([segue.identifier isEqualToString:kEmbedWebResults]) {
         
@@ -48,6 +68,7 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     }
 }
 
+#pragma mark - Transition Helpers
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController
 {
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -60,11 +81,37 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     }];
 }
 
-
 - (void)swapViewControllers
 {
     self.currentSegueIdentifier = (self.currentSegueIdentifier == kEmbedWebResults) ? kEmbedImageResults : kEmbedWebResults;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+}
+
+#pragma mark - Public API
+-(void)webSearchResultsWithCompletionHandler:(CompletionHandler)completion {
+    
+    if (self.webSearchResults.count > 0) {
+        completion(self.webSearchResults, nil);
+    }
+    else {
+        [self.searchAPI searchWithQuery:self.searchQuery completion:^(NSArray *results, NSError *error) {
+            self.webSearchResults = [results copy];
+            completion(self.webSearchResults, error);
+        }];
+    }
+}
+
+-(void)imageSearchResultsWithCompletionHandler:(CompletionHandler)completion {
+    
+    if (self.imageSearchResults.count > 0) {
+        completion(self.imageSearchResults, nil);
+    }
+    else {
+        [self.searchAPI imageSearchWithQuery:self.searchQuery completion:^(NSArray *results, NSError *error) {
+            self.imageSearchResults = [results copy];
+            completion(self.imageSearchResults, error);
+        }];
+    }
 }
 
 @end

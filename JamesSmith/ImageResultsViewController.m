@@ -9,6 +9,13 @@
 // Controllers
 #import "ImageResultsViewController.h"
 
+// Other
+#import "ArrayCollectionViewDataSource.h"
+
+@interface ImageResultsViewController ()
+@property (nonatomic, strong)ArrayCollectionViewDataSource *collectionViewDataSource;
+@end
+
 @implementation ImageResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

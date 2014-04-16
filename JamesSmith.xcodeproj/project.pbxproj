@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		844D20A718FF27DE005796A8 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayDataSource.m */; };
+		844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */; };
+		844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */; };
 		84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */; };
 		84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B7A21218FF0EAA008938EE /* GooglePlus.bundle */; };
 		84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21318FF0EAA008938EE /* GooglePlus.framework */; };
@@ -288,8 +289,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		844D20A518FF27DE005796A8 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
-		844D20A618FF27DE005796A8 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		844D20A518FF27DE005796A8 /* ArrayTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayTableViewDataSource.h; sourceTree = "<group>"; };
+		844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTableViewDataSource.m; sourceTree = "<group>"; };
+		844D20A818FF3F93005796A8 /* ArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
+		844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
 		84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		84B7A21218FF0EAA008938EE /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		84B7A21318FF0EAA008938EE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -736,7 +739,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84C81A1D18FB53260015D1CE /* Results */ = {
+		844D20AB18FF3FA8005796A8 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				844D20A518FF27DE005796A8 /* ArrayTableViewDataSource.h */,
+				844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */,
+				844D20A818FF3F93005796A8 /* ArrayCollectionViewDataSource.h */,
+				844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		84C81A1D18FB53260015D1CE /* Results Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				84C81A2518FB597A0015D1CE /* ResultsViewController.h */,
@@ -748,7 +762,7 @@
 				84C81A1A18FB53240015D1CE /* ImageResultsViewController.h */,
 				84C81A1B18FB53240015D1CE /* ImageResultsViewController.m */,
 			);
-			name = Results;
+			name = "Results Controllers";
 			sourceTree = "<group>";
 		};
 		E96E7DFE18F89CF900D4920D = {
@@ -789,12 +803,11 @@
 			children = (
 				E96E7E1918F89CF900D4920D /* AppDelegate.h */,
 				E96E7E1A18F89CF900D4920D /* AppDelegate.m */,
-				844D20A518FF27DE005796A8 /* ArrayDataSource.h */,
-				844D20A618FF27DE005796A8 /* ArrayDataSource.m */,
 				E96E7E1C18F89CF900D4920D /* Main.storyboard */,
 				E97F5A1818F8B0F600E2EF27 /* Views */,
 				E97F5A1918F8B16200E2EF27 /* Models */,
 				E97F5A1A18F8B50500E2EF27 /* Controllers */,
+				844D20AB18FF3FA8005796A8 /* Data Sources */,
 				E97F5A4018F8DE6B00E2EF27 /* Transitions and Segues */,
 				E96E7E1118F89CF900D4920D /* Supporting Files */,
 			);
@@ -865,7 +878,7 @@
 			children = (
 				E96E7E1F18F89CF900D4920D /* SearchViewController.h */,
 				E96E7E2018F89CF900D4920D /* SearchViewController.m */,
-				84C81A1D18FB53260015D1CE /* Results */,
+				84C81A1D18FB53260015D1CE /* Results Controllers */,
 				E97F5A3118F8D4A900E2EF27 /* WebViewController.h */,
 				E97F5A3218F8D4A900E2EF27 /* WebViewController.m */,
 			);
@@ -1582,7 +1595,7 @@
 				E9A9E2AF18FA290D0092E355 /* OSKTwitterActivity.m in Sources */,
 				E9A9E2AA18FA290D0092E355 /* OSKSMSActivity.m in Sources */,
 				E9A9E28C18FA290D0092E355 /* OSKMailComposeViewController.m in Sources */,
-				844D20A718FF27DE005796A8 /* ArrayDataSource.m in Sources */,
+				844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */,
 				E9A9E27418FA290D0092E355 /* OSKAirDropViewController.m in Sources */,
 				E9A9E2C118FA29470092E355 /* ADNLogin.m in Sources */,
 				E9A9E28018FA290D0092E355 /* OSKFacebookActivity.m in Sources */,
@@ -1666,6 +1679,7 @@
 				E9A9E26B18FA290D0092E355 /* OSKActivityCollectionViewController.m in Sources */,
 				E9A9E28918FA290D0092E355 /* OSKInstapaperUtility.m in Sources */,
 				E9A9E28518FA290D0092E355 /* OSKFileManager.m in Sources */,
+				844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */,
 				E9A9E2AC18FA290D0092E355 /* OSKTextViewAttachment.m in Sources */,
 				E9A9E2B018FA290D0092E355 /* OSKTwitterText.m in Sources */,
 				E9A9E27F18FA290D0092E355 /* OSKEmailActivity.m in Sources */,

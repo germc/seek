@@ -10,7 +10,7 @@
 
 typedef void (^ConfigureCell)(UITableViewCell *cell, id arrayItem);
 
-@interface ArrayDataSource : NSObject <UITableViewDataSource>
+@interface ArrayTableViewDataSource : NSObject <UITableViewDataSource>
 
 -(instancetype)initWithItems:(NSArray *)items
                             cellIdentifier:(NSString *)cellIdentifier

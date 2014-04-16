@@ -7,6 +7,7 @@
 //
 
 // Controllers
+#import "ResultsContainerViewController.h"
 #import "WebResultsViewController.h"
 #import "WebViewController.h"
 
@@ -18,7 +19,7 @@
 #import "ResultCell.h"
 
 // Other
-#import "ArrayDataSource.h"
+#import "ArrayTableViewDataSource.h"
 
 static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 
@@ -27,7 +28,7 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 @property (nonatomic, strong) SearchAPI *searchAPI;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) NSMutableDictionary *offScreenCells;
-@property (nonatomic, strong) ArrayDataSource *tableViewDataSource;
+@property (nonatomic, strong) ArrayTableViewDataSource *tableViewDataSource;
 
 // Views
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -59,7 +60,7 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 // TableView setup
     NSString *cellIdentifier = NSStringFromClass([ResultCell class]);
     [self.tableView registerClass:[ResultCell class] forCellReuseIdentifier:cellIdentifier];
-    self.tableViewDataSource = [[ArrayDataSource alloc] initWithItems:self.searchResults
+    self.tableViewDataSource = [[ArrayTableViewDataSource alloc] initWithItems:self.searchResults
                                                        cellIdentifier:cellIdentifier
                                                    configureCellBlock:[self configureCellBlock]];
     self.tableView.dataSource = self.tableViewDataSource;
@@ -135,11 +136,13 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 -(void)fetchNewResults {
     [self.spinner startAnimating];
     [self.tableView addSubview:self.spinner];
-    [self.searchAPI searchWithQuery:self.searchQuery completion:^(NSArray *results, NSError *error) {
+    
+    [self.delegate webSearchResultsWithCompletionHandler:^(NSArray *results, NSError *error) {
         [self.spinner stopAnimating];
         [self.spinner removeFromSuperview];
+        
         if (error) {
-            NSLog(@"Error On Results VC: %@", error);
+            NSLog(@"Error:%@", error);
         }
         else {
             [self.searchResults addObjectsFromArray:results];

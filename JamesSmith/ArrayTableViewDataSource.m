@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#import "ArrayDataSource.h"
+#import "ArrayTableViewDataSource.h"
 
-@interface ArrayDataSource ()
+@interface ArrayTableViewDataSource ()
 @property (nonatomic, strong) NSString *cellIdentifier;
 @property (nonatomic, weak) NSArray *items;
-@property (nonatomic, strong) ConfigureCell configureCell;
+@property (nonatomic, assign) ConfigureCell configureCell;
 @end
 
-@implementation ArrayDataSource
+@implementation ArrayTableViewDataSource
 
 #pragma mark - Initializers
 -(instancetype)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(ConfigureCell)configureCell {
@@ -23,7 +23,7 @@
         return nil;
     }
     self.items = items;
-    self.cellIdentifier = cellIdentifier;
+    self.cellIdentifier = [cellIdentifier copy];
     self.configureCell = configureCell;
     
     return self;

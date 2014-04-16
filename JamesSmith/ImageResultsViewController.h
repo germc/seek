@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "ResultsContainerViewController.h"
 
 @interface ImageResultsViewController : UIViewController
 
-// Weak because container has strong ref
-@property (nonatomic, weak)NSString *searchQuery;
+@property (nonatomic, weak) id<SearchResultsDelegate> delegate;
 @end
