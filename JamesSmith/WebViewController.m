@@ -61,7 +61,6 @@ NJKWebViewProgressDelegate
 
 #pragma mark - IBActions
 - (IBAction)shareButtonPressed:(id)sender {
-    [[OSKActivitiesManager sharedInstance] setCustomizationsDelegate:self];
     OSKShareableContent *content = [OSKShareableContent contentFromURL:self.searchResult.url];
     [[OSKPresentationManager sharedInstance] presentActivitySheetForContent:content presentingViewController:self options:nil];
 }
