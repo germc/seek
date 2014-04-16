@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844D20A718FF27DE005796A8 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayDataSource.m */; };
+		84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */; };
+		84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B7A21218FF0EAA008938EE /* GooglePlus.bundle */; };
+		84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21318FF0EAA008938EE /* GooglePlus.framework */; };
 		84C81A1818FB52AD0015D1CE /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1718FB52AD0015D1CE /* EmptySegue.m */; };
 		84C81A1C18FB53240015D1CE /* ImageResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1B18FB53240015D1CE /* ImageResultsViewController.m */; };
 		84C81A2018FB53F40015D1CE /* ResultsContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1F18FB53F40015D1CE /* ResultsContainerViewController.m */; };
-		84C81A2218FB56BE0015D1CE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C81A2118FB56BD0015D1CE /* GooglePlus.framework */; };
-		84C81A2418FB56D30015D1CE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C81A2318FB56D30015D1CE /* GoogleOpenSource.framework */; };
 		84C81A2718FB597A0015D1CE /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A2618FB597A0015D1CE /* ResultsViewController.m */; };
 		E96E7E0B18F89CF900D4920D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7E0A18F89CF900D4920D /* Foundation.framework */; };
 		E96E7E0D18F89CF900D4920D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7E0C18F89CF900D4920D /* CoreGraphics.framework */; };
@@ -286,14 +288,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844D20A518FF27DE005796A8 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		844D20A618FF27DE005796A8 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		84B7A21218FF0EAA008938EE /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
+		84B7A21318FF0EAA008938EE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		84C81A1618FB52AD0015D1CE /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
 		84C81A1718FB52AD0015D1CE /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
 		84C81A1A18FB53240015D1CE /* ImageResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResultsViewController.h; sourceTree = "<group>"; };
 		84C81A1B18FB53240015D1CE /* ImageResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResultsViewController.m; sourceTree = "<group>"; };
 		84C81A1E18FB53F40015D1CE /* ResultsContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsContainerViewController.h; sourceTree = "<group>"; };
 		84C81A1F18FB53F40015D1CE /* ResultsContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsContainerViewController.m; sourceTree = "<group>"; };
-		84C81A2118FB56BD0015D1CE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
-		84C81A2318FB56D30015D1CE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		84C81A2518FB597A0015D1CE /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		84C81A2618FB597A0015D1CE /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		E96E7E0718F89CF900D4920D /* JamesSmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JamesSmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -710,10 +715,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C81A2418FB56D30015D1CE /* GoogleOpenSource.framework in Frameworks */,
+				84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */,
 				E96E7E0D18F89CF900D4920D /* CoreGraphics.framework in Frameworks */,
-				84C81A2218FB56BE0015D1CE /* GooglePlus.framework in Frameworks */,
 				E96E7E0F18F89CF900D4920D /* UIKit.framework in Frameworks */,
+				84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */,
 				E96E7E0B18F89CF900D4920D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +773,9 @@
 		E96E7E0918F89CF900D4920D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */,
+				84B7A21218FF0EAA008938EE /* GooglePlus.bundle */,
+				84B7A21318FF0EAA008938EE /* GooglePlus.framework */,
 				E96E7E0A18F89CF900D4920D /* Foundation.framework */,
 				E96E7E0C18F89CF900D4920D /* CoreGraphics.framework */,
 				E96E7E0E18F89CF900D4920D /* UIKit.framework */,
@@ -781,6 +789,8 @@
 			children = (
 				E96E7E1918F89CF900D4920D /* AppDelegate.h */,
 				E96E7E1A18F89CF900D4920D /* AppDelegate.m */,
+				844D20A518FF27DE005796A8 /* ArrayDataSource.h */,
+				844D20A618FF27DE005796A8 /* ArrayDataSource.m */,
 				E96E7E1C18F89CF900D4920D /* Main.storyboard */,
 				E97F5A1818F8B0F600E2EF27 /* Views */,
 				E97F5A1918F8B16200E2EF27 /* Models */,
@@ -930,8 +940,6 @@
 		E9A9E08918FA290C0092E355 /* Overshare Kit */ = {
 			isa = PBXGroup;
 			children = (
-				84C81A2318FB56D30015D1CE /* GoogleOpenSource.framework */,
-				84C81A2118FB56BD0015D1CE /* GooglePlus.framework */,
 				E9A9E2C318FA29840092E355 /* Pocket SDK */,
 				E9A9E2BC18FA29470092E355 /* ADN SDK */,
 				E9A9E08A18FA290C0092E355 /* Images */,
@@ -1521,6 +1529,7 @@
 				E96E7E1E18F89CF900D4920D /* Main.storyboard in Resources */,
 				E9A9E1F218FA290D0092E355 /* GooglePlus-Icon-76@2x.png in Resources */,
 				E9A9E23C18FA290D0092E355 /* osk-safariIcon-76.png in Resources */,
+				84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */,
 				E9A9E23718FA290D0092E355 /* osk-readabilityIcon-29@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1573,6 +1582,7 @@
 				E9A9E2AF18FA290D0092E355 /* OSKTwitterActivity.m in Sources */,
 				E9A9E2AA18FA290D0092E355 /* OSKSMSActivity.m in Sources */,
 				E9A9E28C18FA290D0092E355 /* OSKMailComposeViewController.m in Sources */,
+				844D20A718FF27DE005796A8 /* ArrayDataSource.m in Sources */,
 				E9A9E27418FA290D0092E355 /* OSKAirDropViewController.m in Sources */,
 				E9A9E2C118FA29470092E355 /* ADNLogin.m in Sources */,
 				E9A9E28018FA290D0092E355 /* OSKFacebookActivity.m in Sources */,
@@ -1786,17 +1796,16 @@
 		E96E7E3A18F89CF900D4920D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/JamesSmith/Overshare",
-					Kit,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JamesSmith/JamesSmith-Prefix.pch";
 				INFOPLIST_FILE = "JamesSmith/JamesSmith-Info.plist";
-				LIBRARY_SEARCH_PATHS = "./**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1805,17 +1814,16 @@
 		E96E7E3B18F89CF900D4920D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/JamesSmith/Overshare",
-					Kit,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JamesSmith/JamesSmith-Prefix.pch";
 				INFOPLIST_FILE = "JamesSmith/JamesSmith-Info.plist";
-				LIBRARY_SEARCH_PATHS = "./**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
