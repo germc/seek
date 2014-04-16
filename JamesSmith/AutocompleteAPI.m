@@ -11,11 +11,7 @@
 static NSString * const kGoogleAutoCompleteAPI = @"http://suggestqueries.google.com/complete/search";
 static NSString * const kClientString = @"firefox";
 
-@interface AutocompleteAPI ()
-<
-NSURLSessionDelegate,
-NSURLSessionDownloadDelegate
->
+@interface AutocompleteAPI () <NSURLSessionDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @end
