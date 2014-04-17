@@ -12,6 +12,7 @@
 @property (nonatomic, strong, readwrite) NSURL *sourceURL;
 @property (nonatomic, strong, readwrite) NSURL *fullSizeURL;
 @property (nonatomic, strong, readwrite) NSURL *thumbnailURL;
+@property (nonatomic, strong, readwrite) NSString *altText;
 @end
 
 @implementation BingImageSearchResult
@@ -21,7 +22,7 @@
     result.sourceURL = [NSURL URLWithString:dictionary[@"SourceUrl"]];
     result.fullSizeURL = [NSURL URLWithString:dictionary[@"MediaUrl"]];
     result.thumbnailURL = [NSURL URLWithString:dictionary[@"Thumbnail"][@"MediaUrl"]];
-    
+    result.altText = dictionary[@"Title"];
     return result;
 }
 

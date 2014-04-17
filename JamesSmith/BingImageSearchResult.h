@@ -12,6 +12,7 @@
 @property (nonatomic, strong, readonly) NSURL *sourceURL;
 @property (nonatomic, strong, readonly) NSURL *fullSizeURL;
 @property (nonatomic, strong, readonly) NSURL *thumbnailURL;
+@property (nonatomic, strong, readonly) NSString *altText;
 
 +(instancetype)searchResultWithDictionary:(NSDictionary *)dictionary;
 

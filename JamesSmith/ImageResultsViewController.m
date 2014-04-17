@@ -19,8 +19,13 @@
 
 // Other
 #import "ArrayCollectionViewDataSource.h"
+#import "OvershareKit.h"
 
-@interface ImageResultsViewController () <UICollectionViewDelegate>
+@interface ImageResultsViewController ()
+<
+UICollectionViewDelegate,
+JTSImageViewControllerInteractionsDelegate
+>
 
 // Views
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
@@ -59,13 +64,13 @@
     imageInfo.imageURL = result.fullSizeURL;
     imageInfo.referenceRect = [[collectionView layoutAttributesForItemAtIndexPath:indexPath] frame];
     imageInfo.referenceView = self.collectionView;
-    
+    imageInfo.altText = result.altText;
     JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
                                            initWithImageInfo:imageInfo
                                            mode:JTSImageViewControllerMode_Image
                                            backgroundStyle:JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred];
-    
-    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+    imageViewer.interactionsDelegate = self;
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOffscreen];
 }
 
 #pragma mark - Helpers
@@ -85,4 +90,14 @@
         }
     }];
 }
+
+#pragma mark - JTSImageViewer Delegate
+-(void)imageViewerDidLongPress:(JTSImageViewController *)imageViewer {
+    [imageViewer dismiss:YES];
+    OSKShareableContent *content = [OSKShareableContent
+                                    contentFromImages:@[imageViewer.image]
+                                    caption:[@"Share Image: " stringByAppendingString: imageViewer.imageInfo.altText]];
+    [[OSKPresentationManager sharedInstance] presentActivitySheetForContent:content presentingViewController:self options:nil];
+}
+
 @end
