@@ -83,8 +83,8 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     }];
 }
 
-- (void)swapViewControllers
-{
+- (void)swapViewControllers {
+    
     self.currentSegueIdentifier = (self.currentSegueIdentifier == kEmbedWebResults) ? kEmbedImageResults : kEmbedWebResults;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }

@@ -144,6 +144,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sjq-L3-Giw"/>
+                    <connections>
+                        <outlet property="resultsToggleButton" destination="bnB-Fm-7tz" id="WUI-DE-AGP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Euy-pc-luk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,11 @@
 #import "ResultsViewController.h"
 #import "ResultsContainerViewController.h"
 
+static NSString * const kShowImageResults = @"Show Image Results";
+static NSString * const kShowWebResults = @"Show Web Results";
+
 @interface ResultsViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *resultsToggleButton;
 @property (nonatomic, weak) ResultsContainerViewController *resultsContainerViewController;
 @end
 
@@ -26,6 +30,7 @@
 #pragma mark - IBActions
 - (IBAction)toggleDisplayedResults:(id)sender {
     [self.resultsContainerViewController swapViewControllers];
+    self.resultsToggleButton.title = ([self.resultsToggleButton.title isEqualToString:kShowImageResults]) ? kShowWebResults : kShowImageResults;
 }
 
 - (IBAction)backButtonPressed:(id)sender {
