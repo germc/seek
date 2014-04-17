@@ -24,7 +24,8 @@
 @interface ImageResultsViewController ()
 <
 UICollectionViewDelegate,
-JTSImageViewControllerInteractionsDelegate
+JTSImageViewControllerInteractionsDelegate,
+JTSImageViewControllerDismissalDelegate
 >
 
 // Views
@@ -57,6 +58,7 @@ JTSImageViewControllerInteractionsDelegate
 
 #pragma mark - Collection View Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 
     BingImageSearchResult *result = self.searchResults[indexPath.item];
     
@@ -70,6 +72,7 @@ JTSImageViewControllerInteractionsDelegate
                                            mode:JTSImageViewControllerMode_Image
                                            backgroundStyle:JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred];
     imageViewer.interactionsDelegate = self;
+    imageViewer.dismissalDelegate = self;
     [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOffscreen];
 }
 
@@ -91,13 +94,17 @@ JTSImageViewControllerInteractionsDelegate
     }];
 }
 
-#pragma mark - JTSImageViewer Delegate
+#pragma mark - JTSImageViewer Delegates
 -(void)imageViewerDidLongPress:(JTSImageViewController *)imageViewer {
     [imageViewer dismiss:YES];
     OSKShareableContent *content = [OSKShareableContent
                                     contentFromImages:@[imageViewer.image]
                                     caption:[@"Share Image: " stringByAppendingString: imageViewer.imageInfo.altText]];
     [[OSKPresentationManager sharedInstance] presentActivitySheetForContent:content presentingViewController:self options:nil];
+}
+
+-(void)imageViewerDidDismiss:(JTSImageViewController *)imageViewer {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
 
 @end

@@ -21,6 +21,8 @@ static NSString * const kPocketConsumerKey = @"26297-bb4a404c6725d7fc56d7d5e0";
     UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
     window.backgroundColor = [UIColor whiteColor];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
     [[PocketAPI sharedAPI] setConsumerKey:kPocketConsumerKey];
     [[OSKActivitiesManager sharedInstance] markActivityTypes:@[OSKActivityType_API_AppDotNet, OSKActivityType_API_GooglePlus] alwaysExcluded:YES];
     

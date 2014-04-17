@@ -129,7 +129,6 @@
 }
 
 - (void)dismiss:(BOOL)animated {
-    
     if (self.isPresented == NO) {
         return;
     }

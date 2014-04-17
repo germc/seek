@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843C0EDF1900797600F0EDBA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843C0EDD1900797600F0EDBA /* Default@2x.png */; };
+		843C0EE01900797600F0EDBA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843C0EDE1900797600F0EDBA /* Default-568h@2x.png */; };
 		844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */; };
 		844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */; };
 		844D20AE18FF4C33005796A8 /* ImageResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20AD18FF4C33005796A8 /* ImageResultCell.m */; };
@@ -297,6 +299,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		843C0EDD1900797600F0EDBA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		843C0EDE1900797600F0EDBA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		844D20A518FF27DE005796A8 /* ArrayTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayTableViewDataSource.h; sourceTree = "<group>"; };
 		844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTableViewDataSource.m; sourceTree = "<group>"; };
 		844D20A818FF3F93005796A8 /* ArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
@@ -946,6 +950,8 @@
 		E97F5A3C18F8DA1100E2EF27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				843C0EDD1900797600F0EDBA /* Default@2x.png */,
+				843C0EDE1900797600F0EDBA /* Default-568h@2x.png */,
 				E97F5A3418F8D9FF00E2EF27 /* back_arrow.png */,
 				E97F5A3518F8D9FF00E2EF27 /* back_arrow@2x.png */,
 				E97F5A3618F8D9FF00E2EF27 /* forward_arrow.png */,
@@ -1519,6 +1525,7 @@
 				E9A9E1FF18FA290D0092E355 /* osk-airDropIcon-76.png in Resources */,
 				E9A9E25218FA290D0092E355 /* Riposte-Icon-76.png in Resources */,
 				E9A9E21518FA290D0092E355 /* osk-flickrIcon-76@2x.png in Resources */,
+				843C0EE01900797600F0EDBA /* Default-568h@2x.png in Resources */,
 				E9A9E22618FA290D0092E355 /* osk-messagesIcon-76.png in Resources */,
 				E9A9E22418FA290D0092E355 /* osk-mailIcon-76@2x.png in Resources */,
 				E97F5A3A18F8D9FF00E2EF27 /* forward_arrow.png in Resources */,
@@ -1589,6 +1596,7 @@
 				E9A9E25018FA290D0092E355 /* ReadingList-Icon-76@2x.png in Resources */,
 				E9A9E1E618FA290D0092E355 /* Chrome-Icon-76.png in Resources */,
 				E9A9E23D18FA290D0092E355 /* osk-safariIcon-76@2x.png in Resources */,
+				843C0EDF1900797600F0EDBA /* Default@2x.png in Resources */,
 				E9A9E1F818FA290D0092E355 /* Instapaper-Icon-76@2x.png in Resources */,
 				E96E7E1E18F89CF900D4920D /* Main.storyboard in Resources */,
 				E9A9E1F218FA290D0092E355 /* GooglePlus-Icon-76@2x.png in Resources */,
