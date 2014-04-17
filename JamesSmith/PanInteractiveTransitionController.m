@@ -16,13 +16,13 @@
 -(void)attachToViewController:(UIViewController *)viewController {
     _navigationController = viewController.navigationController;
     
-    UIScreenEdgePanGestureRecognizer *pan = [[UIScreenEdgePanGestureRecognizer alloc]
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(panned:)];
-    pan.edges = UIRectEdgeLeft;
+    //pan.edges = UIRectEdgeLeft;
     [viewController.view addGestureRecognizer:pan];
 }
 
--(void)panned:(UIScreenEdgePanGestureRecognizer *)pan {
+-(void)panned:(UIPanGestureRecognizer *)pan {
     CGPoint translationInView = [pan translationInView:pan.view.superview];
     
     switch (pan.state) {
@@ -32,7 +32,7 @@
             break;
         case UIGestureRecognizerStateChanged: {
             
-            CGFloat fraction = (translationInView.x / 400.0);
+            CGFloat fraction = (translationInView.x / 300.0);
             fraction = fminf(fmaxf(fraction, 0.0), 1.0);
             
             _shouldCompleteTransition = (fraction > 0.5);
