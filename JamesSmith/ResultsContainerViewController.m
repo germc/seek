@@ -24,6 +24,9 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
 @property (nonatomic, strong) NSArray *imageSearchResults;
 @property (nonatomic, strong) NSMutableDictionary *imageThumbnails;
 @property (nonatomic, strong) SearchAPI *searchAPI;
+
+// Switches
+@property (nonatomic, assign) BOOL animationInProgress;
 @end
 
 @implementation ResultsContainerViewController
@@ -79,14 +82,17 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     
     UIViewAnimationOptions options = ([toViewController isKindOfClass:[WebResultsViewController class]]) ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
     
+    self.animationInProgress = YES;
     [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.33 options:options animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
+        self.animationInProgress = NO;
     }];
 }
 
 - (void)swapViewControllers {
     
+    if (self.animationInProgress) return;
     self.currentSegueIdentifier = (self.currentSegueIdentifier == kEmbedWebResults) ? kEmbedImageResults : kEmbedWebResults;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
