@@ -37,8 +37,6 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageResultCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    cell.imageView = [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
-    [cell.contentView addSubview:cell.imageView];
     id item = self.items[indexPath.item];
     self.configureCell(cell, item);
     

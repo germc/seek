@@ -10,16 +10,17 @@
 
 @implementation ImageResultCell
 
--(id)initWithCoder:(NSCoder *)aDecoder {
+-(instancetype)initWithFrame:(CGRect)frame {
     
-    if ( !(self = [super initWithCoder:aDecoder]) ) {
+    if ( !(self = [super initWithFrame:frame]) ) {
         return nil;
     }
-    
-    // Additional Setup
+    self.imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
+    self.imageView.clipsToBounds = YES;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.contentView addSubview:self.imageView];
     
     return self;
 }
-
 
 @end
