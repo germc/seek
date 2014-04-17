@@ -35,6 +35,7 @@
     [super viewDidLoad];
     self.searchResults = [NSMutableArray new];
     ConfigureCell configureCellBlock = ^void(ImageResultCell *cell, BingImageSearchResult *searchResult) {
+        cell.imageView.image = nil;
         [self.delegate imageThumbnailForSearchResult:searchResult withCompletionHandler:^(UIImage *image) {
             cell.imageView.image = image;
         }];

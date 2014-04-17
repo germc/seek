@@ -8,7 +8,7 @@
 
 // Controllers
 #import "ResultsContainerViewController.h"
-
+#import "WebResultsViewController.h"
 // Models
 #import "SearchAPI.h"
 #import "BingImageSearchResult.h"
@@ -77,7 +77,9 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.4 options:UIViewAnimationOptionTransitionFlipFromLeft animations:nil completion:^(BOOL finished) {
+    UIViewAnimationOptions options = ([toViewController isKindOfClass:[WebResultsViewController class]]) ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
+    
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.33 options:options animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
     }];
