@@ -9,5 +9,5 @@
 @import UIKit;
 
 @interface ImageResultCell : UICollectionViewCell
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @end

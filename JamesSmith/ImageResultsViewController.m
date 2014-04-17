@@ -13,6 +13,7 @@
 #import "ImageResultsViewController.h"
 
 // Models
+#import "BingImageSearchResult.h"
 #import "ArrayCollectionViewDataSource.h"
 
 // Other
@@ -23,7 +24,7 @@
 // Views
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) ArrayCollectionViewDataSource *collectionViewDataSource;
-@property (nonatomic, strong) NSArray *searchResults;
+@property (nonatomic, strong) NSMutableArray *searchResults;
 @end
 
 @implementation ImageResultsViewController
@@ -32,9 +33,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    ConfigureCell configureCellBlock = ^void(UICollectionViewCell *cell, id item) {
-        // Configure the cell
+    self.searchResults = [NSMutableArray new];
+    ConfigureCell configureCellBlock = ^void(ImageResultCell *cell, BingImageSearchResult *searchResult) {
+        [self.delegate imageThumbnailForSearchResult:searchResult withCompletionHandler:^(UIImage *image) {
+            cell.imageView.image = image;
+        }];
     };
+    
     NSString *cellIdentifier = NSStringFromClass([ImageResultCell class]);
     [self.collectionView registerClass:[ImageResultCell class] forCellWithReuseIdentifier:cellIdentifier];
     self.collectionViewDataSource = [[ArrayCollectionViewDataSource alloc] initWithItems:self.searchResults cellIdentifier:cellIdentifier configureCellBlock:configureCellBlock];
@@ -57,7 +62,7 @@
             NSLog(@"Error: %@", error);
         }
         else {
-            self.searchResults = results;
+            [self.searchResults addObjectsFromArray:results];
             [self.collectionView reloadData];
         }
     }];

@@ -7,15 +7,19 @@
 //
 
 typedef void(^CompletionHandler)(NSArray *results, NSError *error);
+typedef void (^ImageDownloadCompletionHandler)(UIImage *image);
+
+@class BingImageSearchResult;
 
 @protocol SearchResultsDelegate <NSObject>
 -(void)webSearchResultsWithCompletionHandler:(CompletionHandler)completion;
 -(void)imageSearchResultsWithCompletionHandler:(CompletionHandler)completion;
+-(void)imageThumbnailForSearchResult:(BingImageSearchResult *)searchResult withCompletionHandler:(ImageDownloadCompletionHandler)completion;
 @end
 
 @import UIKit;
 
-@interface ResultsContainerViewController : UIViewController
+@interface ResultsContainerViewController : UIViewController <SearchResultsDelegate>
 
 // Weak because container has strong ref
 @property (nonatomic, weak) NSString *searchQuery;
@@ -26,5 +30,5 @@ typedef void(^CompletionHandler)(NSArray *results, NSError *error);
 // Called by children to access search results
 -(void)webSearchResultsWithCompletionHandler:(CompletionHandler)completion;
 -(void)imageSearchResultsWithCompletionHandler:(CompletionHandler)completion;
-
+-(void)imageThumbnailForSearchResult:(BingImageSearchResult *)searchResult withCompletionHandler:(ImageDownloadCompletionHandler)completion;
 @end

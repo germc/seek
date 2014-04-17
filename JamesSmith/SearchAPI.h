@@ -10,11 +10,14 @@
 
 /* Completion Handler is called on the main thread */
 typedef void (^SearchCompletionHandler)(NSArray *results, NSError *error);
+typedef void (^ImageDownloadCompletionHandler)(UIImage *image);
 
 @interface SearchAPI : NSObject
 
 -(void)searchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion;
 
 -(void)imageSearchWithQuery:(NSString *)query completion:(SearchCompletionHandler)completion;
+
+-(void)loadImageFromURL:(NSURL *)imageURL withCompletion:(ImageDownloadCompletionHandler)completion;
 
 @end

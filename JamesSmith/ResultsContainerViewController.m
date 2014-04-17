@@ -11,6 +11,7 @@
 
 // Models
 #import "SearchAPI.h"
+#import "BingImageSearchResult.h"
 
 static NSString * const kEmbedWebResults = @"EmbedWebResults";
 static NSString * const kEmbedImageResults = @"EmbedImageResults";
@@ -21,6 +22,7 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
 // Models
 @property (nonatomic, strong) NSArray *webSearchResults;
 @property (nonatomic, strong) NSArray *imageSearchResults;
+@property (nonatomic, strong) NSMutableDictionary *imageThumbnails;
 @property (nonatomic, strong) SearchAPI *searchAPI;
 @end
 
@@ -38,7 +40,7 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.imageThumbnails = [NSMutableDictionary new];
     NSLog(@"Results Container View Did Load");
     
 // Web Results are shown first by default
@@ -110,6 +112,19 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
         [self.searchAPI imageSearchWithQuery:self.searchQuery completion:^(NSArray *results, NSError *error) {
             self.imageSearchResults = [results copy];
             completion(self.imageSearchResults, error);
+        }];
+    }
+}
+
+-(void)imageThumbnailForSearchResult:(BingImageSearchResult *)searchResult withCompletionHandler:(ImageDownloadCompletionHandler)completion {
+    
+    if (self.imageThumbnails[searchResult.thumbnailURL]) {
+        completion(self.imageThumbnails[searchResult.thumbnailURL]);
+    }
+    else {
+        [self.searchAPI loadImageFromURL:searchResult.thumbnailURL withCompletion:^(UIImage *image) {
+            self.imageThumbnails[searchResult.thumbnailURL] = [image copy];
+            completion(self.imageThumbnails[searchResult.thumbnailURL]);
         }];
     }
 }

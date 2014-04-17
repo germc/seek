@@ -8,6 +8,8 @@
 
 #import "ArrayCollectionViewDataSource.h"
 
+#import "ImageResultCell.h"
+
 @interface ArrayCollectionViewDataSource ()
 @property (nonatomic, weak) NSArray *items;
 @property (nonatomic, strong) NSString *cellIdentifier;
@@ -34,7 +36,9 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    ImageResultCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    cell.imageView = [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
+    [cell.contentView addSubview:cell.imageView];
     id item = self.items[indexPath.item];
     self.configureCell(cell, item);
     

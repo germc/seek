@@ -101,6 +101,26 @@ NSString * buildAuthorizationHeader();
     [searchTask resume];
 }
 
+-(void)loadImageFromURL:(NSURL *)imageURL withCompletion:(ImageDownloadCompletionHandler)completion {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:imageURL
+                                                        completionHandler:
+                                              ^(NSURL *location, NSURLResponse *response, NSError *error) {
+                                                  
+                                                  if (error) {
+                                                      NSLog(@"Error downloading image: %@", error);
+                                                      return;
+                                                  }
+                                                  UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      completion(image);
+                                                  });
+                                              }];
+    [downloadTask resume];
+}
+
 #pragma mark Private Methods
 NSString * searchURLWithQuery(NSString *query) {
     NSString *format = @"JSON";

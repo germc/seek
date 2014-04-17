@@ -7,8 +7,8 @@
 //
 
 @import Foundation;
-
-typedef void (^ConfigureCell)(UICollectionViewCell *cell, id arrayItem);
+@class ImageResultCell;
+typedef void (^ConfigureCell)(ImageResultCell *cell, id arrayItem);
 
 @interface ArrayCollectionViewDataSource : NSObject <UICollectionViewDataSource>
 
