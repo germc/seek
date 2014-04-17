@@ -332,23 +332,23 @@
 		84C81A1F18FB53F40015D1CE /* ResultsContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsContainerViewController.m; sourceTree = "<group>"; };
 		84C81A2518FB597A0015D1CE /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		84C81A2618FB597A0015D1CE /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
-		E96E7E0718F89CF900D4920D /* JamesSmith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JamesSmith.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96E7E0718F89CF900D4920D /* Seek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96E7E0A18F89CF900D4920D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E96E7E0C18F89CF900D4920D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E96E7E0E18F89CF900D4920D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E96E7E1218F89CF900D4920D /* JamesSmith-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JamesSmith-Info.plist"; sourceTree = "<group>"; };
+		E96E7E1218F89CF900D4920D /* Seek-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Seek-Info.plist"; sourceTree = "<group>"; };
 		E96E7E1418F89CF900D4920D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96E7E1618F89CF900D4920D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E96E7E1818F89CF900D4920D /* JamesSmith-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JamesSmith-Prefix.pch"; sourceTree = "<group>"; };
+		E96E7E1818F89CF900D4920D /* Seek-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Seek-Prefix.pch"; sourceTree = "<group>"; };
 		E96E7E1918F89CF900D4920D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E96E7E1A18F89CF900D4920D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E96E7E1D18F89CF900D4920D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96E7E1F18F89CF900D4920D /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		E96E7E2018F89CF900D4920D /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		E96E7E2218F89CF900D4920D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E96E7E2818F89CF900D4920D /* JamesSmithTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JamesSmithTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96E7E2818F89CF900D4920D /* SeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96E7E2918F89CF900D4920D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E96E7E3118F89CF900D4920D /* JamesSmithTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JamesSmithTests-Info.plist"; sourceTree = "<group>"; };
+		E96E7E3118F89CF900D4920D /* SeekTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SeekTests-Info.plist"; sourceTree = "<group>"; };
 		E96E7E3318F89CF900D4920D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96E7E3518F89CF900D4920D /* JamesSmithTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JamesSmithTests.m; sourceTree = "<group>"; };
 		E97F5A1218F8A12100E2EF27 /* AutocompleteAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutocompleteAPI.h; sourceTree = "<group>"; };
@@ -825,8 +825,8 @@
 		E96E7E0818F89CF900D4920D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E96E7E0718F89CF900D4920D /* JamesSmith.app */,
-				E96E7E2818F89CF900D4920D /* JamesSmithTests.xctest */,
+				E96E7E0718F89CF900D4920D /* Seek.app */,
+				E96E7E2818F89CF900D4920D /* SeekTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -870,10 +870,10 @@
 				E97F5A2118F8B90100E2EF27 /* Utils.h */,
 				E97F5A2218F8B90100E2EF27 /* Utils.m */,
 				E96E7E2218F89CF900D4920D /* Images.xcassets */,
-				E96E7E1218F89CF900D4920D /* JamesSmith-Info.plist */,
+				E96E7E1218F89CF900D4920D /* Seek-Info.plist */,
 				E96E7E1318F89CF900D4920D /* InfoPlist.strings */,
 				E96E7E1618F89CF900D4920D /* main.m */,
-				E96E7E1818F89CF900D4920D /* JamesSmith-Prefix.pch */,
+				E96E7E1818F89CF900D4920D /* Seek-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -890,7 +890,7 @@
 		E96E7E3018F89CF900D4920D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E96E7E3118F89CF900D4920D /* JamesSmithTests-Info.plist */,
+				E96E7E3118F89CF900D4920D /* SeekTests-Info.plist */,
 				E96E7E3218F89CF900D4920D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1392,9 +1392,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E96E7E0618F89CF900D4920D /* JamesSmith */ = {
+		E96E7E0618F89CF900D4920D /* Seek */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E96E7E3918F89CF900D4920D /* Build configuration list for PBXNativeTarget "JamesSmith" */;
+			buildConfigurationList = E96E7E3918F89CF900D4920D /* Build configuration list for PBXNativeTarget "Seek" */;
 			buildPhases = (
 				E96E7E0318F89CF900D4920D /* Sources */,
 				E96E7E0418F89CF900D4920D /* Frameworks */,
@@ -1404,14 +1404,14 @@
 			);
 			dependencies = (
 			);
-			name = JamesSmith;
+			name = Seek;
 			productName = JamesSmith;
-			productReference = E96E7E0718F89CF900D4920D /* JamesSmith.app */;
+			productReference = E96E7E0718F89CF900D4920D /* Seek.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E96E7E2718F89CF900D4920D /* JamesSmithTests */ = {
+		E96E7E2718F89CF900D4920D /* SeekTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E96E7E3C18F89CF900D4920D /* Build configuration list for PBXNativeTarget "JamesSmithTests" */;
+			buildConfigurationList = E96E7E3C18F89CF900D4920D /* Build configuration list for PBXNativeTarget "SeekTests" */;
 			buildPhases = (
 				E96E7E2418F89CF900D4920D /* Sources */,
 				E96E7E2518F89CF900D4920D /* Frameworks */,
@@ -1422,9 +1422,9 @@
 			dependencies = (
 				E96E7E2E18F89CF900D4920D /* PBXTargetDependency */,
 			);
-			name = JamesSmithTests;
+			name = SeekTests;
 			productName = JamesSmithTests;
-			productReference = E96E7E2818F89CF900D4920D /* JamesSmithTests.xctest */;
+			productReference = E96E7E2818F89CF900D4920D /* SeekTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1444,7 +1444,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E96E7E0218F89CF900D4920D /* Build configuration list for PBXProject "JamesSmith" */;
+			buildConfigurationList = E96E7E0218F89CF900D4920D /* Build configuration list for PBXProject "Seek" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1457,8 +1457,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E96E7E0618F89CF900D4920D /* JamesSmith */,
-				E96E7E2718F89CF900D4920D /* JamesSmithTests */,
+				E96E7E0618F89CF900D4920D /* Seek */,
+				E96E7E2718F89CF900D4920D /* SeekTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1771,7 +1771,7 @@
 /* Begin PBXTargetDependency section */
 		E96E7E2E18F89CF900D4920D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E96E7E0618F89CF900D4920D /* JamesSmith */;
+			target = E96E7E0618F89CF900D4920D /* Seek */;
 			targetProxy = E96E7E2D18F89CF900D4920D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1887,9 +1887,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JamesSmith/JamesSmith-Prefix.pch";
-				INFOPLIST_FILE = "JamesSmith/JamesSmith-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "JamesSmith/Seek-Prefix.pch";
+				INFOPLIST_FILE = "JamesSmith/Seek-Info.plist";
+				PRODUCT_NAME = Seek;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1908,9 +1908,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JamesSmith/JamesSmith-Prefix.pch";
-				INFOPLIST_FILE = "JamesSmith/JamesSmith-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "JamesSmith/Seek-Prefix.pch";
+				INFOPLIST_FILE = "JamesSmith/Seek-Info.plist";
+				PRODUCT_NAME = Seek;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1931,8 +1931,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "JamesSmithTests/JamesSmithTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "JamesSmithTests/SeekTests-Info.plist";
+				PRODUCT_NAME = SeekTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1949,8 +1949,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JamesSmith/JamesSmith-Prefix.pch";
-				INFOPLIST_FILE = "JamesSmithTests/JamesSmithTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "JamesSmithTests/SeekTests-Info.plist";
+				PRODUCT_NAME = SeekTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1959,7 +1959,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E96E7E0218F89CF900D4920D /* Build configuration list for PBXProject "JamesSmith" */ = {
+		E96E7E0218F89CF900D4920D /* Build configuration list for PBXProject "Seek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E96E7E3718F89CF900D4920D /* Debug */,
@@ -1968,7 +1968,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E96E7E3918F89CF900D4920D /* Build configuration list for PBXNativeTarget "JamesSmith" */ = {
+		E96E7E3918F89CF900D4920D /* Build configuration list for PBXNativeTarget "Seek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E96E7E3A18F89CF900D4920D /* Debug */,
@@ -1977,7 +1977,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E96E7E3C18F89CF900D4920D /* Build configuration list for PBXNativeTarget "JamesSmithTests" */ = {
+		E96E7E3C18F89CF900D4920D /* Build configuration list for PBXNativeTarget "SeekTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E96E7E3D18F89CF900D4920D /* Debug */,

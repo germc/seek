@@ -124,7 +124,7 @@ NSString * buildAuthorizationHeader();
 #pragma mark Private Methods
 NSString * searchURLWithQuery(NSString *query) {
     NSString *format = @"JSON";
-    NSInteger top = 10;
+    NSInteger top = 20;
     
     NSMutableString *urlString = [NSMutableString new];
     [urlString appendString:kBingWebAPIURL];
