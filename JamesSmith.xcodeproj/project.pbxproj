@@ -11,6 +11,12 @@
 		844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */; };
 		844D20AE18FF4C33005796A8 /* ImageResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20AD18FF4C33005796A8 /* ImageResultCell.m */; };
 		844D20B118FF59A2005796A8 /* BingImageSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20B018FF59A2005796A8 /* BingImageSearchResult.m */; };
+		844D20C219006C15005796A8 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20B719006C15005796A8 /* JTSAnimatedGIFUtility.m */; };
+		844D20C319006C15005796A8 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20B919006C15005796A8 /* JTSImageInfo.m */; };
+		844D20C419006C15005796A8 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20BB19006C15005796A8 /* JTSImageViewController.m */; };
+		844D20C519006C15005796A8 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20BD19006C15005796A8 /* JTSSimpleImageDownloader.m */; };
+		844D20C619006C15005796A8 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20BF19006C15005796A8 /* UIApplication+JTSImageViewController.m */; };
+		844D20C719006C15005796A8 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20C119006C15005796A8 /* UIImage+JTSImageEffects.m */; };
 		84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */; };
 		84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B7A21218FF0EAA008938EE /* GooglePlus.bundle */; };
 		84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21318FF0EAA008938EE /* GooglePlus.framework */; };
@@ -299,6 +305,18 @@
 		844D20AD18FF4C33005796A8 /* ImageResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResultCell.m; sourceTree = "<group>"; };
 		844D20AF18FF59A2005796A8 /* BingImageSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingImageSearchResult.h; sourceTree = "<group>"; };
 		844D20B018FF59A2005796A8 /* BingImageSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingImageSearchResult.m; sourceTree = "<group>"; };
+		844D20B619006C15005796A8 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		844D20B719006C15005796A8 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		844D20B819006C15005796A8 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		844D20B919006C15005796A8 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		844D20BA19006C15005796A8 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		844D20BB19006C15005796A8 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		844D20BC19006C15005796A8 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		844D20BD19006C15005796A8 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		844D20BE19006C15005796A8 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		844D20BF19006C15005796A8 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		844D20C019006C15005796A8 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		844D20C119006C15005796A8 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		84B7A21218FF0EAA008938EE /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		84B7A21318FF0EAA008938EE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -756,6 +774,25 @@
 			name = "Data Sources";
 			sourceTree = "<group>";
 		};
+		844D20B519006C15005796A8 /* JTSImageView */ = {
+			isa = PBXGroup;
+			children = (
+				844D20B619006C15005796A8 /* JTSAnimatedGIFUtility.h */,
+				844D20B719006C15005796A8 /* JTSAnimatedGIFUtility.m */,
+				844D20B819006C15005796A8 /* JTSImageInfo.h */,
+				844D20B919006C15005796A8 /* JTSImageInfo.m */,
+				844D20BA19006C15005796A8 /* JTSImageViewController.h */,
+				844D20BB19006C15005796A8 /* JTSImageViewController.m */,
+				844D20BC19006C15005796A8 /* JTSSimpleImageDownloader.h */,
+				844D20BD19006C15005796A8 /* JTSSimpleImageDownloader.m */,
+				844D20BE19006C15005796A8 /* UIApplication+JTSImageViewController.h */,
+				844D20BF19006C15005796A8 /* UIApplication+JTSImageViewController.m */,
+				844D20C019006C15005796A8 /* UIImage+JTSImageEffects.h */,
+				844D20C119006C15005796A8 /* UIImage+JTSImageEffects.m */,
+			);
+			path = JTSImageView;
+			sourceTree = "<group>";
+		};
 		84C81A1D18FB53260015D1CE /* Results Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,6 +970,7 @@
 		E9A9E06C18F9F7E40092E355 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				844D20B519006C15005796A8 /* JTSImageView */,
 				E9A9E08918FA290C0092E355 /* Overshare Kit */,
 				E9A9E07418FA1A030092E355 /* UIView+AutoLayout */,
 				E9A9E06D18F9F8450092E355 /* NJKWebViewProgress */,
@@ -1597,6 +1635,7 @@
 				84C81A1C18FB53240015D1CE /* ImageResultsViewController.m in Sources */,
 				E9A9E2B518FA290D0092E355 /* OSKUsernamePasswordViewController.m in Sources */,
 				84C81A2718FB597A0015D1CE /* ResultsViewController.m in Sources */,
+				844D20C319006C15005796A8 /* JTSImageInfo.m in Sources */,
 				E9A9E07218F9F8450092E355 /* NJKWebViewProgress.m in Sources */,
 				E9A9E29C18FA290D0092E355 /* OSKPresentationManager.m in Sources */,
 				E9A9E2B118FA290D0092E355 /* OSKTwitterTextEntity.m in Sources */,
@@ -1607,6 +1646,7 @@
 				E9A9E2AA18FA290D0092E355 /* OSKSMSActivity.m in Sources */,
 				E9A9E28C18FA290D0092E355 /* OSKMailComposeViewController.m in Sources */,
 				844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */,
+				844D20C219006C15005796A8 /* JTSAnimatedGIFUtility.m in Sources */,
 				E9A9E27418FA290D0092E355 /* OSKAirDropViewController.m in Sources */,
 				E9A9E2C118FA29470092E355 /* ADNLogin.m in Sources */,
 				E9A9E28018FA290D0092E355 /* OSKFacebookActivity.m in Sources */,
@@ -1632,6 +1672,7 @@
 				E97F5A4918F8E2AF00E2EF27 /* PanInteractiveTransitionController.m in Sources */,
 				E9A9E26318FA290D0092E355 /* OSKAccountManagementViewController.m in Sources */,
 				E9A9E2BA18FA290D0092E355 /* UIView+OSKUtilities.m in Sources */,
+				844D20C719006C15005796A8 /* UIImage+JTSImageEffects.m in Sources */,
 				E97F5A2018F8B53900E2EF27 /* SearchAPI.m in Sources */,
 				E9A9E27E18FA290D0092E355 /* OSKDraftsActivity.m in Sources */,
 				E9A9E27918FA290D0092E355 /* OSKApplicationCredential.m in Sources */,
@@ -1650,6 +1691,7 @@
 				E9A9E27A18FA290D0092E355 /* OSKBorderedButton.m in Sources */,
 				E9A9E2A718FA290D0092E355 /* OSKShareableContent.m in Sources */,
 				E9A9E27C18FA290D0092E355 /* OSKCopyToPasteboardActivity.m in Sources */,
+				844D20C419006C15005796A8 /* JTSImageViewController.m in Sources */,
 				E9A9E26018FA290D0092E355 /* OSK1PasswordBrowserActivity.m in Sources */,
 				E9A9E25918FA290D0092E355 /* NSDate+OSK_ISO8601.m in Sources */,
 				E9A9E2A018FA290D0092E355 /* OSKRPSTPasswordManagementAppService.m in Sources */,
@@ -1667,6 +1709,7 @@
 				E9A9E29A18FA290D0092E355 /* OSKPocketAccountViewController.m in Sources */,
 				84C81A2018FB53F40015D1CE /* ResultsContainerViewController.m in Sources */,
 				E9A9E26718FA290D0092E355 /* OSKActivity.m in Sources */,
+				844D20C519006C15005796A8 /* JTSSimpleImageDownloader.m in Sources */,
 				E97F5A1718F8B0F000E2EF27 /* SuggestionCell.m in Sources */,
 				E9A9E28F18FA290D0092E355 /* OSKManagedAccountStore.m in Sources */,
 				E9A9E28618FA290D0092E355 /* OSKGooglePlusActivity.m in Sources */,
@@ -1693,6 +1736,7 @@
 				E9A9E28518FA290D0092E355 /* OSKFileManager.m in Sources */,
 				844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */,
 				E9A9E2AC18FA290D0092E355 /* OSKTextViewAttachment.m in Sources */,
+				844D20C619006C15005796A8 /* UIApplication+JTSImageViewController.m in Sources */,
 				E9A9E2B018FA290D0092E355 /* OSKTwitterText.m in Sources */,
 				E9A9E27F18FA290D0092E355 /* OSKEmailActivity.m in Sources */,
 				E9A9E29218FA290D0092E355 /* OSKMicroblogPublishingViewController.m in Sources */,

@@ -11,6 +11,7 @@
 
 // Controllers
 #import "ImageResultsViewController.h"
+#import "JTSImageViewController.h"
 
 // Models
 #import "BingImageSearchResult.h"
@@ -50,6 +51,22 @@
 }
 
 #pragma mark - Collection View Delegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    BingImageSearchResult *result = self.searchResults[indexPath.item];
+    
+    JTSImageInfo *imageInfo = [JTSImageInfo new];
+    imageInfo.imageURL = result.fullSizeURL;
+    imageInfo.referenceRect = [[collectionView layoutAttributesForItemAtIndexPath:indexPath] frame];
+    imageInfo.referenceView = self.collectionView;
+    
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred];
+    
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+}
 
 #pragma mark - Helpers
 -(void)fetchNewResults {
