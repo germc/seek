@@ -32,21 +32,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    ConfigureCell configureCellBlock = ^void(UICollectionViewCell *cell, id item) {
+        // Configure the cell
+    };
     NSString *cellIdentifier = NSStringFromClass([ImageResultCell class]);
     [self.collectionView registerClass:[ImageResultCell class] forCellWithReuseIdentifier:cellIdentifier];
-    self.collectionViewDataSource = [[ArrayCollectionViewDataSource alloc] initWithItems:self.searchResults cellIdentifier:cellIdentifier configureCellBlock:[self configureCell]];
+    self.collectionViewDataSource = [[ArrayCollectionViewDataSource alloc] initWithItems:self.searchResults cellIdentifier:cellIdentifier configureCellBlock:configureCellBlock];
     self.collectionView.dataSource = self.collectionViewDataSource;
+    
+    [self fetchNewResults];
 }
 
 #pragma mark - Collection View Delegate
 
 #pragma mark - Helpers
--(ConfigureCell)configureCell {
-    return ^void(UICollectionViewCell *cell, id item) {
-        // Configure the cell
-    };
-}
-
 -(void)fetchNewResults {
     //[self.spinner startAnimating];
     //[self.tableView addSubview:self.spinner];

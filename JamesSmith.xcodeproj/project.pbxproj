@@ -10,6 +10,7 @@
 		844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */; };
 		844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */; };
 		844D20AE18FF4C33005796A8 /* ImageResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20AD18FF4C33005796A8 /* ImageResultCell.m */; };
+		844D20B118FF59A2005796A8 /* BingImageSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20B018FF59A2005796A8 /* BingImageSearchResult.m */; };
 		84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */; };
 		84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B7A21218FF0EAA008938EE /* GooglePlus.bundle */; };
 		84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21318FF0EAA008938EE /* GooglePlus.framework */; };
@@ -296,6 +297,8 @@
 		844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
 		844D20AC18FF4C33005796A8 /* ImageResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResultCell.h; sourceTree = "<group>"; };
 		844D20AD18FF4C33005796A8 /* ImageResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResultCell.m; sourceTree = "<group>"; };
+		844D20AF18FF59A2005796A8 /* BingImageSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingImageSearchResult.h; sourceTree = "<group>"; };
+		844D20B018FF59A2005796A8 /* BingImageSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingImageSearchResult.m; sourceTree = "<group>"; };
 		84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		84B7A21218FF0EAA008938EE /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		84B7A21318FF0EAA008938EE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -874,6 +877,8 @@
 				E97F5A1F18F8B53900E2EF27 /* SearchAPI.m */,
 				E97F5A2A18F8C55D00E2EF27 /* BingSearchResult.h */,
 				E97F5A2B18F8C55D00E2EF27 /* BingSearchResult.m */,
+				844D20AF18FF59A2005796A8 /* BingImageSearchResult.h */,
+				844D20B018FF59A2005796A8 /* BingImageSearchResult.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1673,6 +1678,7 @@
 				E9A9E2CF18FA29840092E355 /* PocketAPILogin.m in Sources */,
 				E9A9E2D118FA29840092E355 /* SFHFKeychainUtils.m in Sources */,
 				E9A9E25B18FA290D0092E355 /* NSHTTPURLResponse+OSKUtilities.m in Sources */,
+				844D20B118FF59A2005796A8 /* BingImageSearchResult.m in Sources */,
 				E9A9E2B218FA290D0092E355 /* OSKTwitterUtility.m in Sources */,
 				E9A9E26118FA290D0092E355 /* OSK1PasswordSearchActivity.m in Sources */,
 				E9A9E2B718FA290D0092E355 /* UIColor+OSKUtility.m in Sources */,

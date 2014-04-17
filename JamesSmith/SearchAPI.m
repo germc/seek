@@ -11,6 +11,7 @@
 
 // Models
 #import "BingSearchResult.h"
+#import "BingImageSearchResult.h"
 
 //Categories
 #import "NSData+Base64.h"
@@ -65,7 +66,7 @@ NSString * buildAuthorizationHeader();
                                                            }];
                                                            
                                                            dispatch_async(dispatch_get_main_queue(), ^{
-                                                               completion(bingResults, jsonError);
+                                                               completion([bingResults copy], jsonError);
                                                            });
                                                        }
                                                    }];
@@ -85,9 +86,15 @@ NSString * buildAuthorizationHeader();
                                                            NSDictionary *jsonDictionaryResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers error:&jsonError];
                                                            NSArray *resultsArray = jsonDictionaryResults[@"d"][@"results"];
                                                            
-                                                           // Make BingImageSearchResults
+                                                           NSMutableArray *bingResults = [NSMutableArray new];
+                                                           [resultsArray enumerateObjectsUsingBlock:^(NSDictionary *result, NSUInteger idx, BOOL *stop) {
+                                                               BingImageSearchResult *bingImageSearchResult = [BingImageSearchResult searchResultWithDictionary:result];
+                                                               [bingResults addObject:bingImageSearchResult];
+                                                           }];
                                                            
-                                                           // Call completion
+                                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                                               completion([bingResults copy], jsonError);
+                                                           });
                                                        }
                                                    }];
     
