@@ -138,7 +138,7 @@ NSString * searchURLWithQuery(NSString *query) {
 
 NSString * imageSearchURLWithQuery(NSString *query) {
     NSString *format = @"JSON";
-    NSInteger top = 20;
+    NSInteger top = 42;
     
     NSMutableString *urlString = [NSMutableString new];
     [urlString appendString:kBingImageAPIURL];
