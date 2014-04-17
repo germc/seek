@@ -11,8 +11,7 @@
 @interface ArrayCollectionViewDataSource ()
 @property (nonatomic, weak) NSArray *items;
 @property (nonatomic, strong) NSString *cellIdentifier;
-@property (nonatomic, assign) ConfigureCell configureCell;
-#warning block may need to be strong
+@property (nonatomic, copy) ConfigureCell configureCell;
 @end
 
 @implementation ArrayCollectionViewDataSource

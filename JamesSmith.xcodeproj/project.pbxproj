@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		844D20A718FF27DE005796A8 /* ArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */; };
 		844D20AA18FF3F93005796A8 /* ArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */; };
+		844D20AE18FF4C33005796A8 /* ImageResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D20AD18FF4C33005796A8 /* ImageResultCell.m */; };
 		84B7A21418FF0EAA008938EE /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */; };
 		84B7A21518FF0EAA008938EE /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B7A21218FF0EAA008938EE /* GooglePlus.bundle */; };
 		84B7A21618FF0EAA008938EE /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7A21318FF0EAA008938EE /* GooglePlus.framework */; };
@@ -293,6 +294,8 @@
 		844D20A618FF27DE005796A8 /* ArrayTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTableViewDataSource.m; sourceTree = "<group>"; };
 		844D20A818FF3F93005796A8 /* ArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
 		844D20A918FF3F93005796A8 /* ArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
+		844D20AC18FF4C33005796A8 /* ImageResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResultCell.h; sourceTree = "<group>"; };
+		844D20AD18FF4C33005796A8 /* ImageResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResultCell.m; sourceTree = "<group>"; };
 		84B7A21118FF0EAA008938EE /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		84B7A21218FF0EAA008938EE /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		84B7A21318FF0EAA008938EE /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -856,6 +859,8 @@
 				E97F5A1618F8B0F000E2EF27 /* SuggestionCell.m */,
 				E97F5A2D18F8CF0F00E2EF27 /* ResultCell.h */,
 				E97F5A2E18F8CF0F00E2EF27 /* ResultCell.m */,
+				844D20AC18FF4C33005796A8 /* ImageResultCell.h */,
+				844D20AD18FF4C33005796A8 /* ImageResultCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1570,6 +1575,7 @@
 				E9A9E25718FA290D0092E355 /* NSCoder+OSKCoder.m in Sources */,
 				E9A9E2A318FA290D0092E355 /* OSKSession.m in Sources */,
 				E9A9E28818FA290D0092E355 /* OSKInstapaperActivity.m in Sources */,
+				844D20AE18FF4C33005796A8 /* ImageResultCell.m in Sources */,
 				E9A9E26818FA290D0092E355 /* OSKActivityCollectionViewCell.m in Sources */,
 				E9A9E27118FA290D0092E355 /* OSKActivityToggleCell.m in Sources */,
 				E9A9E2CE18FA29840092E355 /* PocketAPI.m in Sources */,

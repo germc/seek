@@ -12,7 +12,6 @@
 #import "WebViewController.h"
 
 // Models
-#import "SearchAPI.h"
 #import "BingSearchResult.h"
 
 // Views
@@ -25,7 +24,6 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 
 @interface WebResultsViewController () <UITableViewDelegate>
 // Models
-@property (nonatomic, strong) SearchAPI *searchAPI;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) NSMutableDictionary *offScreenCells;
 @property (nonatomic, strong) ArrayTableViewDataSource *tableViewDataSource;
@@ -48,7 +46,6 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
         return nil;
     }
     self.offScreenCells = [NSMutableDictionary dictionary];
-    self.searchAPI = [SearchAPI new];
     self.searchResults = [NSMutableArray new];
     
     return self;
@@ -58,11 +55,20 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
     [super viewDidLoad];
     
 // TableView setup
+    ConfigureCell configureCellBlock = ^void(UITableViewCell *cell, BingSearchResult *searchResult) {
+        ((ResultCell *)cell).titleLabel.text = searchResult.title;
+        ((ResultCell *)cell).linkLabel.text = searchResult.url.description;
+        ((ResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
+        
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+    };
+    
     NSString *cellIdentifier = NSStringFromClass([ResultCell class]);
     [self.tableView registerClass:[ResultCell class] forCellReuseIdentifier:cellIdentifier];
     self.tableViewDataSource = [[ArrayTableViewDataSource alloc] initWithItems:self.searchResults
                                                        cellIdentifier:cellIdentifier
-                                                   configureCellBlock:[self configureCellBlock]];
+                                                   configureCellBlock:configureCellBlock];
     self.tableView.dataSource = self.tableViewDataSource;
     
 // Spinner setup
@@ -151,16 +157,5 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
     }];
 }
 
--(ConfigureCell)configureCellBlock {
-    return ^void(UITableViewCell *cell, BingSearchResult *searchResult) {
-
-        ((ResultCell *)cell).titleLabel.text = searchResult.title;
-        ((ResultCell *)cell).linkLabel.text = searchResult.url.description;
-        ((ResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
-        
-        [cell setNeedsUpdateConstraints];
-        [cell updateConstraintsIfNeeded];
-    };
-}
 
 @end

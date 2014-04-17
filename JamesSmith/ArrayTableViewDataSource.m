@@ -11,7 +11,7 @@
 @interface ArrayTableViewDataSource ()
 @property (nonatomic, strong) NSString *cellIdentifier;
 @property (nonatomic, weak) NSArray *items;
-@property (nonatomic, assign) ConfigureCell configureCell;
+@property (nonatomic, copy) ConfigureCell configureCell;
 @end
 
 @implementation ArrayTableViewDataSource
