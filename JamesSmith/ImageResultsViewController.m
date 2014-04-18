@@ -30,6 +30,8 @@ JTSImageViewControllerDismissalDelegate
 
 // Views
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
+// Models
 @property (nonatomic, strong) ArrayCollectionViewDataSource *collectionViewDataSource;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @end
@@ -47,6 +49,11 @@ JTSImageViewControllerDismissalDelegate
             cell.imageView.image = image;
         }];
     };
+    
+    // Spinner setup
+    self.spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    self.spinner.center = CGPointMake(self.collectionView.center.x, 65);
+    self.spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
     NSString *cellIdentifier = NSStringFromClass([ImageResultCell class]);
     [self.collectionView registerClass:[ImageResultCell class] forCellWithReuseIdentifier:cellIdentifier];
@@ -78,12 +85,12 @@ JTSImageViewControllerDismissalDelegate
 
 #pragma mark - Helpers
 -(void)fetchNewResults {
-    //[self.spinner startAnimating];
-    //[self.tableView addSubview:self.spinner];
+    [self.spinner startAnimating];
+    [self.collectionView addSubview:self.spinner];
     
     [self.delegate imageSearchResultsWithCompletionHandler:^(NSArray *results, NSError *error) {
-        //[self.spinner stopAnimating];
-        //[self.spinner removeFromSuperview];
+        [self.spinner stopAnimating];
+        [self.spinner removeFromSuperview];
         if (error) {
             NSLog(@"Error: %@", error);
         }
