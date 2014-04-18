@@ -22,6 +22,10 @@
     [viewController.view addGestureRecognizer:pan];
 }
 
+-(CGFloat)completionSpeed {
+    return 0.5;
+}
+
 -(void)panned:(UIPanGestureRecognizer *)pan {
     CGPoint translationInView = [pan translationInView:pan.view.superview];
     
@@ -32,10 +36,10 @@
             break;
         case UIGestureRecognizerStateChanged: {
             
-            CGFloat fraction = (translationInView.x / 300.0);
+            CGFloat fraction = (translationInView.x / 450);
             fraction = fminf(fmaxf(fraction, 0.0), 1.0);
             
-            _shouldCompleteTransition = (fraction > 0.5);
+            _shouldCompleteTransition = (fraction > 0.3);
             
             [self updateInteractiveTransition:fraction];
             break;
