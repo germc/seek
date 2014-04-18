@@ -136,8 +136,10 @@ UINavigationControllerDelegate
     CGFloat width = [cell.textLabel.text sizeWithAttributes:@{
                                                               NSFontAttributeName : cell.textLabel.font,
                                                               }].width;
-    bounds.size = CGSizeMake(MIN((width + 40), 259), bounds.size.height);
+    bounds.size = CGSizeMake(MIN((width + 39 + 10), 269), bounds.size.height);
     cell.bounds = bounds;
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
     return cell;
 }
 

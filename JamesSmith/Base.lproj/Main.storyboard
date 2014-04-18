@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="299" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-6x-r7W">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-6x-r7W">
                                                     <rect key="frame" x="20" y="0.0" width="259" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -53,6 +53,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pLU-6x-r7W" secondAttribute="trailing" constant="20" id="003-Va-Gy8"/>
+                                            <constraint firstAttribute="bottom" secondItem="pLU-6x-r7W" secondAttribute="bottom" id="1Y5-AS-iT0"/>
+                                            <constraint firstItem="pLU-6x-r7W" firstAttribute="leading" secondItem="ICJ-Jv-GEf" secondAttribute="leading" constant="20" id="cqZ-80-W53"/>
+                                            <constraint firstItem="pLU-6x-r7W" firstAttribute="top" secondItem="ICJ-Jv-GEf" secondAttribute="top" id="rec-x8-c39"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="textLabel" destination="pLU-6x-r7W" id="k1t-w7-94N"/>
                                         </connections>
