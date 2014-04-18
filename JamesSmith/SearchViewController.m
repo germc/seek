@@ -24,7 +24,7 @@
 #import "PushBackTransition.h"
 
 
-static NSUInteger const kNumberOfSuggestions = 8;
+static NSUInteger const kNumberOfSuggestions = 6;
 static NSString * const kSearchToResultsSegueID = @"SearchToResultsSegue";
 
 @interface SearchViewController ()
@@ -115,6 +115,7 @@ UINavigationControllerDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.searchQuery = self.suggestions[indexPath.row];
     [self performSegueWithIdentifier:kSearchToResultsSegueID sender:self];
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UICollectionView Data Source
@@ -131,6 +132,12 @@ UINavigationControllerDelegate
     NSString *suggestionText = self.suggestions[indexPath.item];
     cell.textLabel.text = suggestionText;
     
+    CGRect bounds = cell.bounds;
+    CGFloat width = [cell.textLabel.text sizeWithAttributes:@{
+                                                              NSFontAttributeName : cell.textLabel.font,
+                                                              }].width;
+    bounds.size = CGSizeMake(MIN((width + 40), 259), bounds.size.height);
+    cell.bounds = bounds;
     return cell;
 }
 
