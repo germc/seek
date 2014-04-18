@@ -154,7 +154,7 @@ NSString * buildAuthorizationHeader() {
     NSString *authString = [NSString stringWithFormat:@"%@:%@", kBingAccountKey, kBingAccountKey];
     NSData *authData = [authString dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authHeader = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
-    NSLog(@"%@", authHeader);
+    // NSLog(@"%@", authHeader);
     return authHeader;
 }
 
