@@ -80,10 +80,8 @@ static NSString * const kEmbedImageResults = @"EmbedImageResults";
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
-    UIViewAnimationOptions options = ([toViewController isKindOfClass:[WebResultsViewController class]]) ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
-    
     self.animationInProgress = YES;
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.33 options:options animations:nil completion:^(BOOL finished) {
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.33 options:0 animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
         self.animationInProgress = NO;
