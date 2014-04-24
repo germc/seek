@@ -15,7 +15,7 @@
 #import "BingSearchResult.h"
 
 // Views
-#import "ResultCell.h"
+#import "BasicResultCell.h"
 
 // Other
 #import "ArrayTableViewDataSource.h"
@@ -56,16 +56,16 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
     
 // TableView setup
     ConfigureCell configureCellBlock = ^void(UITableViewCell *cell, BingSearchResult *searchResult) {
-        ((ResultCell *)cell).titleLabel.text = searchResult.title;
-        ((ResultCell *)cell).linkLabel.text = searchResult.url.description;
-        ((ResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
+        ((BasicResultCell *)cell).titleLabel.text = searchResult.title;
+        ((BasicResultCell *)cell).linkLabel.text = searchResult.url.description;
+        ((BasicResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
         
         [cell setNeedsUpdateConstraints];
         [cell updateConstraintsIfNeeded];
     };
     
-    NSString *cellIdentifier = NSStringFromClass([ResultCell class]);
-    [self.tableView registerClass:[ResultCell class] forCellReuseIdentifier:cellIdentifier];
+    NSString *cellIdentifier = NSStringFromClass([BasicResultCell class]);
+    [self.tableView registerClass:[BasicResultCell class] forCellReuseIdentifier:cellIdentifier];
     self.tableViewDataSource = [[ArrayTableViewDataSource alloc] initWithItems:self.searchResults
                                                        cellIdentifier:cellIdentifier
                                                    configureCellBlock:configureCellBlock];
@@ -108,12 +108,12 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *reuseID = NSStringFromClass([ResultCell class]);
+    NSString *reuseID = NSStringFromClass([BasicResultCell class]);
     
-    ResultCell *cell = self.offScreenCells[reuseID];
+    BasicResultCell *cell = self.offScreenCells[reuseID];
     
     if (!cell) {
-        cell = [ResultCell new];
+        cell = [BasicResultCell new];
         self.offScreenCells[reuseID] = cell;
     }
     
