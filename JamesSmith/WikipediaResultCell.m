@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 James Smith. All rights reserved.
 //
 
-#import "WikipediaResultCellTableViewCell.h"
+#import "WikipediaResultCell.h"
 
-@implementation WikipediaResultCellTableViewCell
+@implementation WikipediaResultCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

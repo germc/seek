@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface ResultCell : UITableViewCell
+@interface BasicResultCell : UITableViewCell
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *linkLabel;
 @property (strong, nonatomic) UILabel *descriptionLabel;

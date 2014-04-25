@@ -7,7 +7,7 @@
 //
 
 // Views
-#import "ResultCell.h"
+#import "BasicResultCell.h"
 
 // Categories
 #import "UIView+AutoLayout.h"
@@ -15,11 +15,11 @@
 static const CGFloat kLabelHorizontalInsets = 15.0f;
 static const CGFloat kLabelVerticalInsets = 10.0f;
 
-@interface ResultCell ()
+@interface BasicResultCell ()
 @property (nonatomic, assign) BOOL didSetupConstraints;
 @end
 
-@implementation ResultCell
+@implementation BasicResultCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
