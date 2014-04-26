@@ -13,6 +13,7 @@
 @property (nonatomic, strong, readwrite) NSURL *url;
 @property (nonatomic, strong, readwrite) NSString *descriptionText;
 @property (nonatomic, assign, readwrite) int64_t uid;
+@property (nonatomic, assign, readwrite) BingSearchResultType resultType;
 @end
 
 @implementation BingSearchResult
@@ -23,6 +24,19 @@
     result.url = [NSURL URLWithString:dictionary[@"Url"]];
     result.descriptionText = dictionary[@"Description"];
     result.uid = [dictionary[@"ID"] integerValue];
+    
+    NSString *host = result.url.host;
+
+    if ([host isEqualToString:@"en.wikipedia.org"]) {
+        result.resultType = ResultTypeWikipedia;
+    }
+    else if ([host isEqualToString:@"twitter.com"]) {
+        result.resultType = ResultTypeTwitter;
+    }
+    else {
+        result.resultType = ResultTypeBasic;
+    }
+    
     return result;
 }
 
