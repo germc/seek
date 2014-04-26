@@ -13,11 +13,24 @@
 #import "OSKADNLoginManager.h"
 #import "PocketAPI.h"
 
+#import "WikipediaAPI.h"
+#warning DELETE WIKIPEDIA IMPORTS
+
 static NSString * const kPocketConsumerKey = @"26297-bb4a404c6725d7fc56d7d5e0";
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    
+#warning DELETE WIKIPEDIA USAGE
+    WikipediaAPI *wikiAPI = [WikipediaAPI new];
+    [wikiAPI articleForTitle:@"Olivia_Wilde" withCompletion:^(NSArray *results, NSError *error) {
+        
+    }];
+    
+    
     UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
     window.backgroundColor = [UIColor whiteColor];
     

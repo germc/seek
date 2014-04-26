@@ -27,6 +27,7 @@
 		84C81A1C18FB53240015D1CE /* ImageResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1B18FB53240015D1CE /* ImageResultsViewController.m */; };
 		84C81A2018FB53F40015D1CE /* ResultsContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1F18FB53F40015D1CE /* ResultsContainerViewController.m */; };
 		84C81A2718FB597A0015D1CE /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A2618FB597A0015D1CE /* ResultsViewController.m */; };
+		E92469C7190B463C004B41D9 /* WikipediaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E92469C6190B463C004B41D9 /* WikipediaAPI.m */; };
 		E96E7E0B18F89CF900D4920D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7E0A18F89CF900D4920D /* Foundation.framework */; };
 		E96E7E0D18F89CF900D4920D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7E0C18F89CF900D4920D /* CoreGraphics.framework */; };
 		E96E7E0F18F89CF900D4920D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E7E0E18F89CF900D4920D /* UIKit.framework */; };
@@ -335,6 +336,8 @@
 		84C81A1F18FB53F40015D1CE /* ResultsContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsContainerViewController.m; sourceTree = "<group>"; };
 		84C81A2518FB597A0015D1CE /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		84C81A2618FB597A0015D1CE /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		E92469C5190B463C004B41D9 /* WikipediaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaAPI.h; sourceTree = "<group>"; };
+		E92469C6190B463C004B41D9 /* WikipediaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaAPI.m; sourceTree = "<group>"; };
 		E96E7E0718F89CF900D4920D /* Seek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96E7E0A18F89CF900D4920D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E96E7E0C18F89CF900D4920D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -933,6 +936,8 @@
 				E97F5A2B18F8C55D00E2EF27 /* BingSearchResult.m */,
 				844D20AF18FF59A2005796A8 /* BingImageSearchResult.h */,
 				844D20B018FF59A2005796A8 /* BingImageSearchResult.m */,
+				E92469C5190B463C004B41D9 /* WikipediaAPI.h */,
+				E92469C6190B463C004B41D9 /* WikipediaAPI.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1660,6 +1665,7 @@
 				E9A9E2B518FA290D0092E355 /* OSKUsernamePasswordViewController.m in Sources */,
 				84C81A2718FB597A0015D1CE /* ResultsViewController.m in Sources */,
 				844D20C319006C15005796A8 /* JTSImageInfo.m in Sources */,
+				E92469C7190B463C004B41D9 /* WikipediaAPI.m in Sources */,
 				E9A9E07218F9F8450092E355 /* NJKWebViewProgress.m in Sources */,
 				E9A9E29C18FA290D0092E355 /* OSKPresentationManager.m in Sources */,
 				E9A9E2B118FA290D0092E355 /* OSKTwitterTextEntity.m in Sources */,

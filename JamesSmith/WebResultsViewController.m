@@ -16,6 +16,7 @@
 
 // Views
 #import "BasicResultCell.h"
+#import "WikipediaResultCell.h"
 
 // Other
 #import "ArrayTableViewDataSource.h"
@@ -56,9 +57,18 @@ static NSString * const kResultsToWebSegue = @"ResultsToWebSegue";
     
 // TableView setup
     ConfigureCell configureCellBlock = ^void(UITableViewCell *cell, BingSearchResult *searchResult) {
-        ((BasicResultCell *)cell).titleLabel.text = searchResult.title;
-        ((BasicResultCell *)cell).linkLabel.text = searchResult.url.description;
-        ((BasicResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
+        
+        if (1) {
+            ((BasicResultCell *)cell).titleLabel.text = searchResult.title;
+            ((BasicResultCell *)cell).linkLabel.text = searchResult.url.description;
+            ((BasicResultCell *)cell).descriptionLabel.text = searchResult.descriptionText;
+        }
+        else if (searchResult.resultType == ResultTypeWikipedia) {
+//            ((WikipediaResultCell *)cell)
+        }
+        else if (searchResult.resultType == ResultTypeTwitter) {
+            
+        }
         
         [cell setNeedsUpdateConstraints];
         [cell updateConstraintsIfNeeded];

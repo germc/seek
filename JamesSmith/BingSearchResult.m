@@ -26,7 +26,7 @@
     result.uid = [dictionary[@"ID"] integerValue];
     
     NSString *host = result.url.host;
-
+    
     if ([host isEqualToString:@"en.wikipedia.org"]) {
         result.resultType = ResultTypeWikipedia;
     }
